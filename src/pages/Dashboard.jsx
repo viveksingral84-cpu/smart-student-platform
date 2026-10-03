@@ -1,397 +1,575 @@
-import '../App.css'
-import { Link } from 'react-router-dom'
+import "../App.css";
+
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 function Dashboard() {
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate("/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  };
+
   return (
-    <div className="app">
+    <div className="student-dashboard">
 
-      {/* ================= NAVIGATION BAR ================= */}
-      <nav className="navbar">
+      {/* ================= SIDEBAR ================= */}
 
-        <div className="logo">
-          Smart Student
+      <aside className="student-sidebar">
+
+        <div className="sidebar-logo">
+          <div className="logo-circle">🎓</div>
+
+          <span>Student Platform</span>
         </div>
 
-        <div className="nav-links">
+        <div className="sidebar-menu">
 
-          <Link to="/">
+          <Link to="/" className="sidebar-link active">
+            <span>🏠</span>
             Dashboard
           </Link>
 
-          <Link to="/academics">
+          <Link to="/academics" className="sidebar-link">
+            <span>📚</span>
             Academics
           </Link>
 
-          <Link to="/career">
+          <Link to="/career" className="sidebar-link">
+            <span>🎯</span>
             Career
           </Link>
 
-          <Link to="/skills">
+          <Link to="/skills" className="sidebar-link">
+            <span>💻</span>
             Skills
           </Link>
 
-          <Link to="/roadmap">
-            Roadmap
+          <Link to="/roadmap" className="sidebar-link">
+            <span>🛣️</span>
+            Career Roadmap
           </Link>
 
-          <span>
+          <button
+            type="button"
+            className="sidebar-link sidebar-disabled"
+          >
+            <span>🚀</span>
             Projects
-          </span>
+          </button>
 
-          <span>
-            Profile
-          </span>
-
-        </div>
-
-      </nav>
-
-
-      {/* ================= DASHBOARD HEADER ================= */}
-
-      <div className="dashboard-header">
-
-        <h1>
-          Welcome to Smart Student Platform 👋
-        </h1>
-
-        <p>
-          Manage your academics, career, skills and projects
-          in one place.
-        </p>
-
-      </div>
-
-
-      {/* ================= MAIN MODULES ================= */}
-
-      <div className="dashboard-cards">
-
-        {/* Academics */}
-
-        <div className="dashboard-card">
-
-          <h2>
-            📚 Academics
-          </h2>
-
-          <p>
-            Track your attendance, marks, assignments,
-            examinations and academic performance.
-          </p>
-
-          <Link
-            to="/academics"
-            className="dashboard-action"
+          <button
+            type="button"
+            className="sidebar-link sidebar-disabled"
           >
-            Open Academics →
-          </Link>
+            <span>👥</span>
+            Friends & Groups
+          </button>
 
-        </div>
-
-
-        {/* Career */}
-
-        <div className="dashboard-card">
-
-          <h2>
-            🎯 Career
-          </h2>
-
-          <p>
-            Select your career goal and understand the
-            skills required for your desired career.
-          </p>
-
-          <Link
-            to="/career"
-            className="dashboard-action"
+          <button
+            type="button"
+            className="sidebar-link sidebar-disabled"
           >
-            Open Career →
-          </Link>
+            <span>🔔</span>
+            Notifications
+          </button>
 
         </div>
 
+        <div className="sidebar-spacer"></div>
 
-        {/* Skills */}
+        <div className="sidebar-bottom">
 
-        <div className="dashboard-card">
+          <div className="student-mini-profile">
 
-          <h2>
-            💻 Skills
-          </h2>
+            <div className="student-avatar">
+              {user?.email?.charAt(0).toUpperCase() || "S"}
+            </div>
 
-          <p>
-            Track your current skills, identify skill gaps
-            and take skill assessments.
-          </p>
+            <div className="student-mini-info">
+              <strong>Student</strong>
 
-          <Link
-            to="/skills"
-            className="dashboard-action"
+              <span>
+                {user?.email || "Student Account"}
+              </span>
+            </div>
+
+          </div>
+
+          <button
+            type="button"
+            className="sidebar-logout"
+            onClick={handleLogout}
           >
-            Open Skills →
-          </Link>
+            🚪 Logout
+          </button>
 
         </div>
 
+      </aside>
 
-        {/* Roadmap */}
 
-        <div className="dashboard-card">
+      {/* ================= MAIN CONTENT ================= */}
 
-          <h2>
-            🛣️ Career Roadmap
-          </h2>
+      <main className="dashboard-main">
 
-          <p>
-            Follow a personalized step-by-step roadmap
-            based on your career goal and skill gaps.
-          </p>
+        {/* TOP BAR */}
+
+        <header className="dashboard-topbar">
+
+          <div className="topbar-left">
+
+            <div>
+              <h1>Welcome back! 👋</h1>
+
+              <p>
+                Student Dashboard
+              </p>
+            </div>
+
+          </div>
+
+          <div className="topbar-right">
+
+            <button className="notification-button">
+              🔔
+            </button>
+
+            <div className="profile-button">
+              {user?.email?.charAt(0).toUpperCase() || "S"}
+            </div>
+
+          </div>
+
+        </header>
+
+
+        {/* ================= WELCOME ================= */}
+
+        <section className="welcome-card">
+
+          <div>
+
+            <h2>
+              Build your skills.
+              <br />
+              Shape your career.
+            </h2>
+
+            <p>
+              Manage your academics, develop valuable skills,
+              explore career opportunities and follow your
+              personalized roadmap.
+            </p>
+
+          </div>
 
           <Link
             to="/roadmap"
-            className="dashboard-action"
+            className="welcome-button"
           >
-            Open Roadmap →
+            View My Roadmap →
           </Link>
 
+        </section>
+
+
+        {/* ================= QUICK ACTIONS ================= */}
+
+        <section className="quick-actions">
+
+          <div className="action-item">
+            <span>📚</span>
+
+            <div>
+              <h4>Academics</h4>
+              <p>Track your academic progress</p>
+            </div>
+          </div>
+
+
+          <div className="action-item">
+            <span>🎯</span>
+
+            <div>
+              <h4>Career</h4>
+              <p>Explore your career goals</p>
+            </div>
+          </div>
+
+
+          <div className="action-item">
+            <span>💻</span>
+
+            <div>
+              <h4>Skills</h4>
+              <p>Improve your technical skills</p>
+            </div>
+          </div>
+
+
+          <div className="action-item">
+            <span>🛣️</span>
+
+            <div>
+              <h4>Roadmap</h4>
+              <p>Follow your career journey</p>
+            </div>
+          </div>
+
+        </section>
+
+
+        {/* ================= DASHBOARD GRID ================= */}
+
+        <div className="dashboard-grid">
+
+          {/* LEFT SIDE */}
+
+          <div>
+
+            <section className="dashboard-panel">
+
+              <div className="panel-header">
+
+                <div>
+                  <span>LEARNING</span>
+                  <h2>Your Progress</h2>
+                </div>
+
+                <span className="panel-link">
+                  View Details
+                </span>
+
+              </div>
+
+
+              <div className="module-grid">
+
+                {/* Academics */}
+
+                <Link
+                  to="/academics"
+                  className="module-card"
+                >
+
+                  <div className="module-icon academics-icon">
+                    📚
+                  </div>
+
+                  <h4>Academics</h4>
+
+                  <p>
+                    Track attendance, marks and examinations.
+                  </p>
+
+                  <div className="progress-row">
+
+                    <div className="progress-label">
+                      <span>Progress</span>
+                      <span>85%</span>
+                    </div>
+
+                    <div className="progress-bar">
+                      <div
+                        className="progress-fill purple-fill"
+                        style={{ width: "85%" }}
+                      ></div>
+                    </div>
+
+                  </div>
+
+                </Link>
+
+
+                {/* Career */}
+
+                <Link
+                  to="/career"
+                  className="module-card"
+                >
+
+                  <div className="module-icon career-icon">
+                    🎯
+                  </div>
+
+                  <h4>Career Development</h4>
+
+                  <p>
+                    Explore career goals and opportunities.
+                  </p>
+
+                  <div className="progress-row">
+
+                    <div className="progress-label">
+                      <span>Progress</span>
+                      <span>45%</span>
+                    </div>
+
+                    <div className="progress-bar">
+                      <div
+                        className="progress-fill orange-fill"
+                        style={{ width: "45%" }}
+                      ></div>
+                    </div>
+
+                  </div>
+
+                </Link>
+
+
+                {/* Skills */}
+
+                <Link
+                  to="/skills"
+                  className="module-card"
+                >
+
+                  <div className="module-icon skills-icon">
+                    💻
+                  </div>
+
+                  <h4>Skills Development</h4>
+
+                  <p>
+                    Improve your technical and soft skills.
+                  </p>
+
+                  <div className="progress-row">
+
+                    <div className="progress-label">
+                      <span>Progress</span>
+                      <span>62%</span>
+                    </div>
+
+                    <div className="progress-bar">
+                      <div
+                        className="progress-fill green-fill"
+                        style={{ width: "62%" }}
+                      ></div>
+                    </div>
+
+                  </div>
+
+                </Link>
+
+
+                {/* Roadmap */}
+
+                <Link
+                  to="/roadmap"
+                  className="module-card"
+                >
+
+                  <div className="module-icon roadmap-icon">
+                    🛣️
+                  </div>
+
+                  <h4>Career Roadmap</h4>
+
+                  <p>
+                    Follow your personalized career journey.
+                  </p>
+
+                  <div className="progress-row">
+
+                    <div className="progress-label">
+                      <span>Progress</span>
+                      <span>60%</span>
+                    </div>
+
+                    <div className="progress-bar">
+                      <div
+                        className="progress-fill blue-fill"
+                        style={{ width: "60%" }}
+                      ></div>
+                    </div>
+
+                  </div>
+
+                </Link>
+
+              </div>
+
+            </section>
+
+          </div>
+
+
+          {/* RIGHT SIDE */}
+
+          <div className="right-panel">
+
+            {/* Career Progress */}
+
+            <section className="dashboard-panel">
+
+              <div className="panel-header">
+
+                <div>
+                  <span>CAREER</span>
+                  <h2>Career Progress</h2>
+                </div>
+
+              </div>
+
+              <div className="career-progress-box">
+
+                <div className="progress-circle">
+
+                  <div className="progress-circle-inner">
+                    <strong>60%</strong>
+                    <span>Complete</span>
+                  </div>
+
+                </div>
+
+                <div className="career-progress-info">
+
+                  <h4>Career Roadmap</h4>
+
+                  <p>
+                    Keep completing your roadmap
+                    steps to reach your career goal.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            {/* Recent Activity */}
+
+            <section className="dashboard-panel">
+
+              <div className="panel-header">
+
+                <div>
+                  <span>ACTIVITY</span>
+                  <h2>Recent Activity</h2>
+                </div>
+
+              </div>
+
+
+              <div className="activity-list">
+
+                <div className="activity-item">
+
+                  <div className="activity-icon">
+                    📚
+                  </div>
+
+                  <div>
+                    <h4>Academics reviewed</h4>
+                    <p>Today</p>
+                  </div>
+
+                </div>
+
+
+                <div className="activity-item">
+
+                  <div className="activity-icon">
+                    💻
+                  </div>
+
+                  <div>
+                    <h4>Skills progress updated</h4>
+                    <p>Yesterday</p>
+                  </div>
+
+                </div>
+
+
+                <div className="activity-item">
+
+                  <div className="activity-icon">
+                    🛣️
+                  </div>
+
+                  <div>
+                    <h4>Roadmap opened</h4>
+                    <p>Recently</p>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </section>
+
+
+            {/* Coming Soon */}
+
+            <section className="dashboard-panel">
+
+              <div className="panel-header">
+
+                <div>
+                  <span>COMING SOON</span>
+                  <h2>Platform Features</h2>
+                </div>
+
+              </div>
+
+
+              <div className="coming-soon-grid">
+
+                <div className="coming-soon-card">
+                  <span>🤖</span>
+                  <strong>AI Assistant</strong>
+                  <p>Smart learning help</p>
+                </div>
+
+                <div className="coming-soon-card">
+                  <span>🚀</span>
+                  <strong>Projects</strong>
+                  <p>Build your portfolio</p>
+                </div>
+
+                <div className="coming-soon-card">
+                  <span>👥</span>
+                  <strong>Community</strong>
+                  <p>Connect with students</p>
+                </div>
+
+              </div>
+
+            </section>
+
+          </div>
+
         </div>
 
-      </div>
 
-
-      {/* ================= QUICK PROGRESS ================= */}
-
-      <div className="progress-section">
-
-        <h2>
-          📊 Quick Progress
-        </h2>
-
-
-        <div className="progress-cards">
-
-          {/* Attendance */}
-
-          <div className="progress-card">
-
-            <span>
-              📊
-            </span>
-
-            <h3>
-              Attendance
-            </h3>
-
-            <strong>
-              85%
-            </strong>
-
-            <p>
-              Current attendance
-            </p>
-
-          </div>
-
-
-          {/* Marks */}
-
-          <div className="progress-card">
-
-            <span>
-              📝
-            </span>
-
-            <h3>
-              Average Marks
-            </h3>
-
-            <strong>
-              78%
-            </strong>
-
-            <p>
-              Current academic average
-            </p>
-
-          </div>
-
-
-          {/* Skills */}
-
-          <div className="progress-card">
-
-            <span>
-              💻
-            </span>
-
-            <h3>
-              Skills Progress
-            </h3>
-
-            <strong>
-              62%
-            </strong>
-
-            <p>
-              Current skill readiness
-            </p>
-
-          </div>
-
-
-          {/* Career */}
-
-          <div className="progress-card">
-
-            <span>
-              🎯
-            </span>
-
-            <h3>
-              Career Progress
-            </h3>
-
-            <strong>
-              45%
-            </strong>
-
-            <p>
-              Roadmap progress
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* ================= TODAY'S ACTIONS ================= */}
-
-      <div className="dashboard-card">
-
-        <h2>
-          🚀 Recommended Actions
-        </h2>
-
-        <p>
-          Continue improving your academic and career
-          development.
-        </p>
-
-        <div className="dashboard-action-list">
-
-          <div className="dashboard-action-item">
-            📚 Review your academic progress
-          </div>
-
-          <div className="dashboard-action-item">
-            🎯 Check your career skill gaps
-          </div>
-
-          <div className="dashboard-action-item">
-            📝 Take a skill assessment
-          </div>
-
-          <div className="dashboard-action-item">
-            🛣️ Continue your career roadmap
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* ================= FUTURE FEATURES ================= */}
-
-      <div className="dashboard-card">
-
-        <h2>
-          🔮 Platform Features
-        </h2>
-
-        <p>
-          More features will be connected as we build
-          the complete Smart Student Platform.
-        </p>
-
-        <div className="future-feature-grid">
-
-          <div className="future-feature">
-
-            <span>
-              🤖
-            </span>
-
-            <strong>
-              AI Assistant
-            </strong>
-
-            <p>
-              AI-based career and learning assistance.
-            </p>
-
-          </div>
-
-
-          <div className="future-feature">
-
-            <span>
-              🚀
-            </span>
-
-            <strong>
-              Projects
-            </strong>
-
-            <p>
-              Manage projects and build your portfolio.
-            </p>
-
-          </div>
-
-
-          <div className="future-feature">
-
-            <span>
-              👥
-            </span>
-
-            <strong>
-              Friends & Groups
-            </strong>
-
-            <p>
-              Connect and collaborate with other students.
-            </p>
-
-          </div>
-
-
-          <div className="future-feature">
-
-            <span>
-              🔔
-            </span>
-
-            <strong>
-              Notifications
-            </strong>
-
-            <p>
-              Receive important academic and career updates.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
+        {/* ================= FOOTER ================= */}
+
+        <footer
+          style={{
+            textAlign: "center",
+            padding: "25px 0 5px",
+            color: "#9298a7",
+            fontSize: "10px",
+          }}
+        >
+          🎓 Smart Student Platform
+          {" • "}
+          Build your skills. Shape your career.
+        </footer>
+
+      </main>
 
     </div>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;

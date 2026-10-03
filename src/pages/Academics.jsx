@@ -1,445 +1,612 @@
-import '../App.css'
-import { Link } from 'react-router-dom'
+import "../App.css";
+
+import { Link } from "react-router-dom";
 
 function Academics() {
   return (
-    <div className="app">
+    <div className="academics-page">
 
-      {/* ================= NAVIGATION BAR ================= */}
+      {/* ================= SIDEBAR ================= */}
 
-      <nav className="navbar">
+      <aside className="academics-sidebar">
 
-        <div className="logo">
-          Smart Student
+        <div className="sidebar-logo">
+          <div className="logo-circle">🎓</div>
+          <span>Student Platform</span>
         </div>
 
-        <div className="nav-links">
+        <div className="sidebar-menu">
 
-          <Link to="/">
+          <Link to="/" className="sidebar-link">
+            <span>🏠</span>
             Dashboard
           </Link>
 
-          <Link to="/academics">
+          <Link
+            to="/academics"
+            className="sidebar-link active"
+          >
+            <span>📚</span>
             Academics
           </Link>
 
-          <Link to="/career">
+          <Link to="/career" className="sidebar-link">
+            <span>🎯</span>
             Career
           </Link>
 
-          <Link to="/skills">
+          <Link to="/skills" className="sidebar-link">
+            <span>💻</span>
             Skills
           </Link>
 
-          <Link to="/roadmap">
-            Roadmap
+          <Link to="/roadmap" className="sidebar-link">
+            <span>🛣️</span>
+            Career Roadmap
           </Link>
 
-          <span>
+          <button
+            type="button"
+            className="sidebar-link sidebar-disabled"
+          >
+            <span>🚀</span>
             Projects
-          </span>
-
-          <span>
-            Profile
-          </span>
-
-        </div>
-
-      </nav>
-
-
-      {/* ================= PAGE HEADER ================= */}
-
-      <div className="dashboard-header">
-
-        <h1>
-          📚 Academic Progress
-        </h1>
-
-        <p>
-          Track your attendance, marks, assignments,
-          examinations and academic performance.
-        </p>
-
-      </div>
-
-
-      {/* ================= ACADEMIC MODULES ================= */}
-
-      <div className="dashboard-cards">
-
-        {/* Attendance */}
-
-        <div className="dashboard-card">
-
-          <h2>
-            📊 Attendance
-          </h2>
-
-          <p>
-            Monitor your subject-wise attendance and
-            overall attendance percentage.
-          </p>
-
-          <div className="academic-stat">
-            <strong>85%</strong>
-            <span>Overall Attendance</span>
-          </div>
-
-        </div>
-
-
-        {/* Marks */}
-
-        <div className="dashboard-card">
-
-          <h2>
-            📝 Marks
-          </h2>
-
-          <p>
-            Track your internal marks, semester marks
-            and overall academic performance.
-          </p>
-
-          <div className="academic-stat">
-            <strong>78%</strong>
-            <span>Average Marks</span>
-          </div>
-
-        </div>
-
-
-        {/* Assignments */}
-
-        <div className="dashboard-card">
-
-          <h2>
-            📋 Assignments
-          </h2>
-
-          <p>
-            Keep track of completed, pending and upcoming
-            assignments.
-          </p>
-
-          <div className="academic-stat">
-            <strong>8 / 10</strong>
-            <span>Assignments Completed</span>
-          </div>
-
-        </div>
-
-
-        {/* Exams */}
-
-        <div className="dashboard-card">
-
-          <h2>
-            📅 Exams
-          </h2>
-
-          <p>
-            View upcoming examinations and track your
-            examination performance.
-          </p>
-
-          <div className="academic-stat">
-            <strong>2</strong>
-            <span>Upcoming Exams</span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* ================= SUBJECT PERFORMANCE ================= */}
-
-      <div className="dashboard-card">
-
-        <h2>
-          📖 Subject Performance
-        </h2>
-
-        <p>
-          Your current performance in different subjects.
-        </p>
-
-        <div className="subject-list">
-
-          <div className="subject-row">
-
-            <div>
-              <strong>Database Management System</strong>
-              <span>DBMS</span>
-            </div>
-
-            <strong>82%</strong>
-
-          </div>
-
-
-          <div className="subject-row">
-
-            <div>
-              <strong>Artificial Intelligence</strong>
-              <span>AI</span>
-            </div>
-
-            <strong>76%</strong>
-
-          </div>
-
-
-          <div className="subject-row">
-
-            <div>
-              <strong>Computer Networks & Security</strong>
-              <span>CNS</span>
-            </div>
-
-            <strong>79%</strong>
-
-          </div>
-
-
-          <div className="subject-row">
-
-            <div>
-              <strong>Theory of Computation</strong>
-              <span>TOC</span>
-            </div>
-
-            <strong>74%</strong>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* ================= ACADEMIC SUMMARY ================= */}
-
-      <div className="dashboard-card">
-
-        <h2>
-          📊 Academic Summary
-        </h2>
-
-        <div className="progress-cards">
-
-          <div className="progress-card">
-
-            <span>
-              📊
-            </span>
-
-            <h3>
-              Attendance
-            </h3>
-
-            <strong>
-              85%
-            </strong>
-
-            <p>
-              Overall attendance
-            </p>
-
-          </div>
-
-
-          <div className="progress-card">
-
-            <span>
-              📝
-            </span>
-
-            <h3>
-              Marks
-            </h3>
-
-            <strong>
-              78%
-            </strong>
-
-            <p>
-              Average performance
-            </p>
-
-          </div>
-
-
-          <div className="progress-card">
-
-            <span>
-              📋
-            </span>
-
-            <h3>
-              Assignments
-            </h3>
-
-            <strong>
-              80%
-            </strong>
-
-            <p>
-              Completion rate
-            </p>
-
-          </div>
-
-
-          <div className="progress-card">
-
-            <span>
-              📅
-            </span>
-
-            <h3>
-              Exams
-            </h3>
-
-            <strong>
-              2
-            </strong>
-
-            <p>
-              Upcoming exams
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* ================= FUTURE ACADEMIC FEATURES ================= */}
-
-      <div className="dashboard-card">
-
-        <h2>
-          🔮 Academic Features
-        </h2>
-
-        <p>
-          These features will be connected to Firebase
-          when we build the real academic management system.
-        </p>
-
-        <div className="future-feature-grid">
-
-          <div className="future-feature">
-
-            <span>
-              📅
-            </span>
-
-            <strong>
-              Exam Schedule
-            </strong>
-
-            <p>
-              View upcoming exams and examination dates.
-            </p>
-
-          </div>
-
-
-          <div className="future-feature">
-
-            <span>
-              📋
-            </span>
-
-            <strong>
-              Assignment Tracker
-            </strong>
-
-            <p>
-              Track assignment deadlines and completion.
-            </p>
-
-          </div>
-
-
-          <div className="future-feature">
-
-            <span>
-              🧪
-            </span>
-
-            <strong>
-              Practicals
-            </strong>
-
-            <p>
-              Manage practical work and practical submissions.
-            </p>
-
-          </div>
-
-
-          <div className="future-feature">
-
-            <span>
-              🚀
-            </span>
-
-            <strong>
-              Academic Projects
-            </strong>
-
-            <p>
-              Track academic projects and submissions.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      {/* ================= BACK TO DASHBOARD ================= */}
-
-      <div className="dashboard-card">
-
-        <h2>
-          🏠 Continue Your Journey
-        </h2>
-
-        <p>
-          After checking your academic progress,
-          continue working on your career and skills.
-        </p>
-
-        <div className="dashboard-button-row">
-
-          <Link
-            to="/"
-            className="assessment-button"
+          </button>
+
+          <button
+            type="button"
+            className="sidebar-link sidebar-disabled"
           >
-            ← Dashboard
-          </Link>
+            <span>👥</span>
+            Friends & Groups
+          </button>
 
-          <Link
-            to="/career"
-            className="assessment-button"
+          <button
+            type="button"
+            className="sidebar-link sidebar-disabled"
           >
-            Career →
-          </Link>
+            <span>🔔</span>
+            Notifications
+          </button>
 
         </div>
 
-      </div>
+        <div className="sidebar-spacer"></div>
+
+        <div className="sidebar-bottom">
+
+          <button
+            type="button"
+            className="sidebar-logout"
+          >
+            🚪 Logout
+          </button>
+
+        </div>
+
+      </aside>
+
+
+      {/* ================= MAIN CONTENT ================= */}
+
+      <main className="academics-main">
+
+        {/* TOP BAR */}
+
+        <header className="academics-topbar">
+
+          <div>
+            <p>ACADEMIC MANAGEMENT</p>
+
+            <h1>
+              Academic Progress 📚
+            </h1>
+          </div>
+
+          <div className="academics-top-icon">
+            📚
+          </div>
+
+        </header>
+
+
+        {/* INTRO CARD */}
+
+        <section className="academics-hero">
+
+          <div>
+
+            <span>
+              YOUR ACADEMIC JOURNEY
+            </span>
+
+            <h2>
+              Track your academic performance
+            </h2>
+
+            <p>
+              Monitor attendance, marks, assignments,
+              examinations and subject performance
+              from one place.
+            </p>
+
+          </div>
+
+          <div className="academics-hero-icon">
+            🎓
+          </div>
+
+        </section>
+
+
+        {/* ================= OVERVIEW ================= */}
+
+        <section className="academics-section">
+
+          <div className="academics-section-heading">
+
+            <div>
+              <span>OVERVIEW</span>
+              <h2>Academic Overview</h2>
+            </div>
+
+            <p>
+              Your current academic statistics
+            </p>
+
+          </div>
+
+
+          <div className="academic-stats-grid">
+
+            {/* Attendance */}
+
+            <div className="academic-stat-card">
+
+              <div className="academic-stat-icon purple">
+                📊
+              </div>
+
+              <div>
+                <span>Attendance</span>
+                <strong>85%</strong>
+                <small>Good progress</small>
+              </div>
+
+              <div className="academic-progress">
+                <div
+                  className="academic-progress-fill purple"
+                  style={{ width: "85%" }}
+                ></div>
+              </div>
+
+            </div>
+
+
+            {/* Marks */}
+
+            <div className="academic-stat-card">
+
+              <div className="academic-stat-icon blue">
+                📝
+              </div>
+
+              <div>
+                <span>Average Marks</span>
+                <strong>78%</strong>
+                <small>Academic performance</small>
+              </div>
+
+              <div className="academic-progress">
+                <div
+                  className="academic-progress-fill blue"
+                  style={{ width: "78%" }}
+                ></div>
+              </div>
+
+            </div>
+
+
+            {/* Assignments */}
+
+            <div className="academic-stat-card">
+
+              <div className="academic-stat-icon green">
+                📋
+              </div>
+
+              <div>
+                <span>Assignments</span>
+                <strong>8 / 10</strong>
+                <small>Completed</small>
+              </div>
+
+              <div className="academic-progress">
+                <div
+                  className="academic-progress-fill green"
+                  style={{ width: "80%" }}
+                ></div>
+              </div>
+
+            </div>
+
+
+            {/* Exams */}
+
+            <div className="academic-stat-card">
+
+              <div className="academic-stat-icon orange">
+                📅
+              </div>
+
+              <div>
+                <span>Upcoming Exams</span>
+                <strong>2</strong>
+                <small>Examinations scheduled</small>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* ================= SUBJECT PERFORMANCE ================= */}
+
+        <section className="academics-section">
+
+          <div className="academics-section-heading">
+
+            <div>
+              <span>SUBJECTS</span>
+              <h2>Subject Performance</h2>
+            </div>
+
+            <p>
+              Current performance in your subjects
+            </p>
+
+          </div>
+
+
+          <div className="subject-list">
+
+            {/* DBMS */}
+
+            <div className="subject-row">
+
+              <div className="subject-info">
+
+                <div className="subject-icon">
+                  🗄️
+                </div>
+
+                <div>
+                  <strong>
+                    Database Management System
+                  </strong>
+
+                  <span>
+                    DBMS
+                  </span>
+                </div>
+
+              </div>
+
+              <div className="subject-result">
+
+                <strong>82%</strong>
+
+                <div className="subject-progress">
+                  <div
+                    style={{ width: "82%" }}
+                  ></div>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* AI */}
+
+            <div className="subject-row">
+
+              <div className="subject-info">
+
+                <div className="subject-icon">
+                  🤖
+                </div>
+
+                <div>
+                  <strong>
+                    Artificial Intelligence
+                  </strong>
+
+                  <span>
+                    AI
+                  </span>
+                </div>
+
+              </div>
+
+              <div className="subject-result">
+
+                <strong>76%</strong>
+
+                <div className="subject-progress">
+                  <div
+                    style={{ width: "76%" }}
+                  ></div>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* CNS */}
+
+            <div className="subject-row">
+
+              <div className="subject-info">
+
+                <div className="subject-icon">
+                  🔐
+                </div>
+
+                <div>
+                  <strong>
+                    Computer Networks & Security
+                  </strong>
+
+                  <span>
+                    CNS
+                  </span>
+                </div>
+
+              </div>
+
+              <div className="subject-result">
+
+                <strong>79%</strong>
+
+                <div className="subject-progress">
+                  <div
+                    style={{ width: "79%" }}
+                  ></div>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            {/* TOC */}
+
+            <div className="subject-row">
+
+              <div className="subject-info">
+
+                <div className="subject-icon">
+                  ⚙️
+                </div>
+
+                <div>
+                  <strong>
+                    Theory of Computation
+                  </strong>
+
+                  <span>
+                    TOC
+                  </span>
+                </div>
+
+              </div>
+
+              <div className="subject-result">
+
+                <strong>74%</strong>
+
+                <div className="subject-progress">
+                  <div
+                    style={{ width: "74%" }}
+                  ></div>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* ================= ACADEMIC SUMMARY ================= */}
+
+        <section className="academics-section">
+
+          <div className="academics-section-heading">
+
+            <div>
+              <span>SUMMARY</span>
+              <h2>Academic Summary</h2>
+            </div>
+
+          </div>
+
+
+          <div className="academic-summary-grid">
+
+            <div className="summary-card">
+              <span>📊</span>
+              <strong>85%</strong>
+              <h3>Attendance</h3>
+              <p>Overall attendance</p>
+            </div>
+
+            <div className="summary-card">
+              <span>📝</span>
+              <strong>78%</strong>
+              <h3>Marks</h3>
+              <p>Average performance</p>
+            </div>
+
+            <div className="summary-card">
+              <span>📋</span>
+              <strong>80%</strong>
+              <h3>Assignments</h3>
+              <p>Completion rate</p>
+            </div>
+
+            <div className="summary-card">
+              <span>📅</span>
+              <strong>2</strong>
+              <h3>Exams</h3>
+              <p>Upcoming examinations</p>
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* ================= FUTURE FEATURES ================= */}
+
+        <section className="academics-section">
+
+          <div className="academics-section-heading">
+
+            <div>
+              <span>UPCOMING</span>
+              <h2>Academic Features</h2>
+            </div>
+
+            <p>
+              Features that will be connected to Firebase
+            </p>
+
+          </div>
+
+
+          <div className="future-feature-grid">
+
+            <div className="future-feature-card">
+
+              <div>📅</div>
+
+              <h3>
+                Exam Schedule
+              </h3>
+
+              <p>
+                View upcoming exams and examination dates.
+              </p>
+
+            </div>
+
+
+            <div className="future-feature-card">
+
+              <div>📋</div>
+
+              <h3>
+                Assignment Tracker
+              </h3>
+
+              <p>
+                Track assignment deadlines and completion.
+              </p>
+
+            </div>
+
+
+            <div className="future-feature-card">
+
+              <div>🧪</div>
+
+              <h3>
+                Practicals
+              </h3>
+
+              <p>
+                Manage practical work and submissions.
+              </p>
+
+            </div>
+
+
+            <div className="future-feature-card">
+
+              <div>🚀</div>
+
+              <h3>
+                Academic Projects
+              </h3>
+
+              <p>
+                Track academic projects and submissions.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* ================= NAVIGATION ================= */}
+
+        <section className="academics-navigation">
+
+          <div>
+
+            <h2>
+              Continue Your Journey
+            </h2>
+
+            <p>
+              After checking your academic progress,
+              continue working on your career and skills.
+            </p>
+
+          </div>
+
+          <div className="academics-navigation-buttons">
+
+            <Link
+              to="/"
+              className="academic-button secondary"
+            >
+              ← Dashboard
+            </Link>
+
+            <Link
+              to="/career"
+              className="academic-button primary"
+            >
+              Career →
+            </Link>
+
+          </div>
+
+        </section>
+
+
+        {/* FOOTER */}
+
+        <footer className="academics-footer">
+          🎓 Smart Student Platform
+          {" • "}
+          Build your skills. Shape your career.
+        </footer>
+
+      </main>
 
     </div>
-  )
+  );
 }
 
-export default Academics
+export default Academics;
