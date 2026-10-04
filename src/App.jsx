@@ -6,6 +6,8 @@ import Academics from "./pages/Academics";
 import Career from "./pages/Career";
 import Skills from "./pages/Skills";
 import CareerRoadmap from "./pages/CareerRoadmap";
+import Friends from "./pages/Friends";
+import Projects from "./pages/Projects";
 import Login from "./pages/Login";
 
 import { useAuth } from "./context/AuthContext";
@@ -86,6 +88,22 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+  path="/friends"
+  element={
+    <ProtectedRoute>
+      <Friends />
+    </ProtectedRoute>
+  }
+/>
+<Route
+  path="/projects"
+  element={
+    <ProtectedRoute>
+      <Projects />
+    </ProtectedRoute>
+  }
+/>
 
       </Routes>
     </BrowserRouter>

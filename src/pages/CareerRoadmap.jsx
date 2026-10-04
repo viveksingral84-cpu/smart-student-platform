@@ -97,6 +97,7 @@ function CareerRoadmap() {
 
   return (
     <div className="roadmap-page">
+
       {/* ================= SIDEBAR ================= */}
 
       <aside className="student-sidebar">
@@ -110,7 +111,10 @@ function CareerRoadmap() {
         </div>
 
         <div className="sidebar-menu">
-          <div className="sidebar-menu-title">MAIN MENU</div>
+
+          <div className="sidebar-menu-title">
+            MAIN MENU
+          </div>
 
           <Link to="/" className="sidebar-link">
             <span>🏠</span>
@@ -170,18 +174,23 @@ function CareerRoadmap() {
             Notifications
             <small>Coming soon</small>
           </button>
+
         </div>
 
         <div className="sidebar-spacer"></div>
 
         <div className="sidebar-bottom">
           <div className="student-mini-profile">
-            <div className="student-avatar">🧑‍🎓</div>
+
+            <div className="student-avatar">
+              🧑‍🎓
+            </div>
 
             <div className="student-mini-info">
               <strong>Student</strong>
               <span>Career Development</span>
             </div>
+
           </div>
         </div>
       </aside>
@@ -189,15 +198,19 @@ function CareerRoadmap() {
       {/* ================= MAIN ROADMAP ================= */}
 
       <main className="roadmap-main">
+
         {/* TOP BAR */}
 
         <header className="roadmap-topbar">
+
           <div>
             <span className="roadmap-small-title">
               CAREER DEVELOPMENT
             </span>
 
-            <h1>Personalized Career Roadmap</h1>
+            <h1>
+              Personalized Career Roadmap
+            </h1>
 
             <p>
               Follow your step-by-step journey toward your
@@ -205,49 +218,74 @@ function CareerRoadmap() {
             </p>
           </div>
 
-          <div className="roadmap-top-icon">🛣️</div>
+          <div className="roadmap-top-icon">
+            🛣️
+          </div>
+
         </header>
 
         {/* ================= CAREER HERO ================= */}
 
         <section className="roadmap-career-hero">
-          <div className="roadmap-career-icon">🎯</div>
+
+          <div className="roadmap-career-icon">
+            🎯
+          </div>
 
           <div className="roadmap-career-info">
-            <span>YOUR CAREER GOAL</span>
 
-            <h2>{selectedCareer}</h2>
+            <span>
+              YOUR CAREER GOAL
+            </span>
+
+            <h2>
+              {selectedCareer}
+            </h2>
 
             <p>
               Your roadmap is designed to help you develop
               the skills, knowledge and practical experience
               required for this career.
             </p>
+
           </div>
 
           <div className="roadmap-career-progress">
-            <strong>{overallProgress}%</strong>
+            <strong>
+              {overallProgress}%
+            </strong>
 
-            <span>Skill Readiness</span>
+            <span>
+              Skill Readiness
+            </span>
           </div>
+
         </section>
 
         {/* ================= PROGRESS ================= */}
 
         <section className="roadmap-section">
-          <div className="roadmap-section-heading">
-            <div>
-              <span>PROGRESS OVERVIEW</span>
 
-              <h2>Your Career Progress</h2>
+          <div className="roadmap-section-heading">
+
+            <div>
+              <span>
+                PROGRESS OVERVIEW
+              </span>
+
+              <h2>
+                Your Career Progress
+              </h2>
             </div>
 
             <div className="roadmap-progress-number">
               {overallProgress}%
             </div>
+
           </div>
 
           <div className="roadmap-large-progress">
+
             <div
               className="roadmap-large-progress-fill"
               style={{
@@ -256,35 +294,52 @@ function CareerRoadmap() {
             >
               {overallProgress}%
             </div>
+
           </div>
 
           <div className="roadmap-progress-details">
-            <span>Current skill readiness</span>
 
-            <strong>{overallProgress}%</strong>
+            <span>
+              Current skill readiness
+            </span>
+
+            <strong>
+              {overallProgress}%
+            </strong>
+
           </div>
 
           {assessmentPercentage > 0 && (
             <div className="roadmap-assessment">
               📝 Latest assessment score:
-              <strong>{assessmentPercentage}%</strong>
+              <strong>
+                {assessmentPercentage}%
+              </strong>
             </div>
           )}
+
         </section>
 
         {/* ================= SKILL GAPS ================= */}
 
         <section className="roadmap-section">
-          <div className="roadmap-section-heading">
-            <div>
-              <span>SKILL ANALYSIS</span>
 
-              <h2>Priority Skill Gaps</h2>
+          <div className="roadmap-section-heading">
+
+            <div>
+              <span>
+                SKILL ANALYSIS
+              </span>
+
+              <h2>
+                Priority Skill Gaps
+              </h2>
             </div>
 
             <span className="roadmap-heading-icon">
               🎯
             </span>
+
           </div>
 
           <p className="roadmap-section-description">
@@ -294,78 +349,116 @@ function CareerRoadmap() {
           </p>
 
           {skillGaps.length === 0 ? (
+
             <div className="roadmap-success-box">
+
               <div>🎉</div>
 
               <div>
-                <h3>Required Skill Levels Reached</h3>
+                <h3>
+                  Required Skill Levels Reached
+                </h3>
 
                 <p>
                   Your current skill levels meet the
                   configured requirements for this career.
                 </p>
               </div>
+
             </div>
+
           ) : (
+
             <div className="roadmap-modern-skill-grid">
+
               {skillGaps.map((skill, index) => (
+
                 <div
                   className="roadmap-modern-skill-card"
                   key={skill.name}
                 >
+
                   <div className="roadmap-skill-top">
+
                     <div className="roadmap-skill-number">
                       {index + 1}
                     </div>
 
                     <div>
-                      <h3>{skill.name}</h3>
+
+                      <h3>
+                        {skill.name}
+                      </h3>
 
                       <span>
                         Skill Gap: {skill.gap}%
                       </span>
+
                     </div>
+
                   </div>
 
                   <div className="roadmap-skill-progress">
+
                     <div
                       className="roadmap-skill-progress-fill"
                       style={{
                         width: `${skill.current}%`,
                       }}
                     ></div>
+
                   </div>
 
                   <div className="roadmap-skill-values">
+
                     <span>
                       Current
-                      <strong>{skill.current}%</strong>
+                      <strong>
+                        {skill.current}%
+                      </strong>
                     </span>
 
                     <span>
                       Required
-                      <strong>{skill.required}%</strong>
+                      <strong>
+                        {skill.required}%
+                      </strong>
                     </span>
+
                   </div>
+
                 </div>
+
               ))}
+
             </div>
+
           )}
+
         </section>
 
         {/* ================= LEARNING PATH ================= */}
 
         <section className="roadmap-section">
-          <div className="roadmap-section-heading">
-            <div>
-              <span>YOUR JOURNEY</span>
 
-              <h2>Learning Path</h2>
+          <div className="roadmap-section-heading">
+
+            <div>
+
+              <span>
+                YOUR JOURNEY
+              </span>
+
+              <h2>
+                Learning Path
+              </h2>
+
             </div>
 
             <span className="roadmap-heading-icon">
               🚀
             </span>
+
           </div>
 
           <p className="roadmap-section-description">
@@ -374,7 +467,9 @@ function CareerRoadmap() {
           </p>
 
           <div className="modern-roadmap">
+
             {roadmapSteps.map((step) => (
+
               <div
                 className={
                   step.status === "Current Step"
@@ -383,20 +478,28 @@ function CareerRoadmap() {
                 }
                 key={step.number}
               >
+
                 <div className="modern-roadmap-line">
+
                   <div className="modern-roadmap-number">
                     {step.number}
                   </div>
+
                 </div>
 
                 <div className="modern-roadmap-content">
+
                   <div className="modern-roadmap-title">
+
                     <span className="modern-roadmap-icon">
                       {step.icon}
                     </span>
 
                     <div>
-                      <h3>{step.title}</h3>
+
+                      <h3>
+                        {step.title}
+                      </h3>
 
                       <span
                         className={
@@ -407,37 +510,62 @@ function CareerRoadmap() {
                       >
                         {step.status}
                       </span>
+
                     </div>
+
                   </div>
 
-                  <p>{step.description}</p>
+                  <p>
+                    {step.description}
+                  </p>
+
                 </div>
+
               </div>
+
             ))}
+
           </div>
+
         </section>
 
         {/* ================= NEXT ACTION ================= */}
 
         <section className="roadmap-section">
-          <div className="roadmap-section-heading">
-            <div>
-              <span>RECOMMENDED</span>
 
-              <h2>Recommended Next Action</h2>
+          <div className="roadmap-section-heading">
+
+            <div>
+
+              <span>
+                RECOMMENDED
+              </span>
+
+              <h2>
+                Recommended Next Action
+              </h2>
+
             </div>
 
             <span className="roadmap-heading-icon">
               ⚡
             </span>
+
           </div>
 
           {skillGaps.length > 0 ? (
+
             <div className="roadmap-next-action">
-              <div className="roadmap-next-icon">🎯</div>
+
+              <div className="roadmap-next-icon">
+                🎯
+              </div>
 
               <div className="roadmap-next-content">
-                <span>PRIORITY SKILL</span>
+
+                <span>
+                  PRIORITY SKILL
+                </span>
 
                 <h3>
                   Improve {skillGaps[0].name}
@@ -449,6 +577,7 @@ function CareerRoadmap() {
                 </p>
 
                 <div className="roadmap-action-stats">
+
                   <div>
                     <span>Current</span>
 
@@ -472,6 +601,7 @@ function CareerRoadmap() {
                       {skillGaps[0].gap}%
                     </strong>
                   </div>
+
                 </div>
 
                 <Link
@@ -480,89 +610,130 @@ function CareerRoadmap() {
                 >
                   📚 Improve Skills →
                 </Link>
+
               </div>
+
             </div>
+
           ) : (
+
             <div className="roadmap-success-box">
+
               <div>🎉</div>
 
               <div>
-                <h3>Good Progress!</h3>
+
+                <h3>
+                  Good Progress!
+                </h3>
 
                 <p>
                   Continue with practical tasks, projects
                   and portfolio development.
                 </p>
+
               </div>
+
             </div>
+
           )}
+
         </section>
 
         {/* ================= FUTURE FEATURES ================= */}
 
         <section className="roadmap-section">
-          <div className="roadmap-section-heading">
-            <div>
-              <span>COMING SOON</span>
 
-              <h2>Future Roadmap Features</h2>
+          <div className="roadmap-section-heading">
+
+            <div>
+
+              <span>
+                COMING SOON
+              </span>
+
+              <h2>
+                Future Roadmap Features
+              </h2>
+
             </div>
 
             <span className="roadmap-heading-icon">
               🚀
             </span>
+
           </div>
 
           <div className="roadmap-feature-grid">
+
             <div className="roadmap-feature-card">
+
               <div>📚</div>
 
-              <h3>Learning Resources</h3>
+              <h3>
+                Learning Resources
+              </h3>
 
               <p>
                 Courses, tutorials and documentation
                 recommended for your skill gaps.
               </p>
+
             </div>
 
             <div className="roadmap-feature-card">
+
               <div>🛠️</div>
 
-              <h3>Practical Tasks</h3>
+              <h3>
+                Practical Tasks
+              </h3>
 
               <p>
                 Real-world exercises to apply what you
                 learn.
               </p>
+
             </div>
 
             <div className="roadmap-feature-card">
+
               <div>🚀</div>
 
-              <h3>Projects</h3>
+              <h3>
+                Projects
+              </h3>
 
               <p>
                 Build projects and add them to your
                 portfolio.
               </p>
+
             </div>
 
             <div className="roadmap-feature-card">
+
               <div>🤖</div>
 
-              <h3>AI Recommendations</h3>
+              <h3>
+                AI Recommendations
+              </h3>
 
               <p>
                 AI-powered learning recommendations based
                 on your progress.
               </p>
+
             </div>
+
           </div>
+
         </section>
 
         {/* ================= BOTTOM NAVIGATION ================= */}
 
         <section className="roadmap-navigation">
+
           <Link
             to="/skills"
             className="roadmap-nav-button secondary"
@@ -576,17 +747,23 @@ function CareerRoadmap() {
           >
             Dashboard →
           </Link>
+
         </section>
 
-        {/* FOOTER */}
+        {/* ================= FOOTER ================= */}
 
         <footer className="dashboard-footer">
-          <span>🎓 Smart Student Platform</span>
+
+          <span>
+            🎓 Smart Student Platform
+          </span>
 
           <span>
             Build your skills. Shape your career.
           </span>
+
         </footer>
+
       </main>
     </div>
   );

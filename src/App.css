@@ -1,325 +1,8592 @@
-/* ===== MAIN ===== */
+/* =========================================================
+   SMART STUDENT PLATFORM
+   APP.CSS
+   Professional + Attractive + Large Visible Text
+   ========================================================= */
 
-.app {
-  min-height: 100vh;
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
   background: #f5f7fb;
-  color: #1f2937;
+  color: #172033;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
 }
 
-/* ===== NAVBAR ===== */
-
-.navbar {
-  background: #111827;
-  padding: 18px 35px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
 }
 
-.logo {
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-
-.nav-links a,
-.nav-links span {
-  color: #ddd;
-  text-decoration: none;
+button {
   cursor: pointer;
 }
 
-.nav-links a:hover,
-.nav-links span:hover {
-  color: white;
+a {
+  text-decoration: none;
 }
 
-/* ===== HEADER ===== */
+/* =========================================================
+   COMMON PAGE
+   ========================================================= */
 
-.dashboard-header {
-  max-width: 1100px;
-  margin: auto;
-  padding: 35px 20px 20px;
+.student-dashboard,
+.academics-page,
+.career-page,
+.skills-page,
+.roadmap-page {
+  min-height: 100vh;
+  background: #f5f7fb;
 }
 
-.dashboard-header h1 {
-  margin-bottom: 8px;
-}
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
 
-/* ===== CARDS ===== */
-
-.dashboard-cards {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.dashboard-card {
-  max-width: 1100px;
-  margin: 20px auto;
-  padding: 25px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 3px 12px #0001;
-}
-
-.dashboard-card h2 {
-  margin-top: 0;
-}
-
-/* ===== PROGRESS ===== */
-
-.progress-section {
-  max-width: 1100px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-.progress-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-}
-
-.progress-card {
-  background: white;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px #0001;
-}
-
-.progress-card span {
-  font-size: 25px;
-}
-
-.progress-card strong {
-  display: block;
-  font-size: 25px;
-  color: #2563eb;
-}
-
-/* ===== FEATURES ===== */
-
-.future-feature-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-}
-
-.future-feature {
-  padding: 18px;
-  background: #f8fafc;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-}
-
-.future-feature span {
-  font-size: 25px;
-}
-
-/* ===== CAREER ===== */
-
-.career-goal-box {
+.student-sidebar,
+.academics-sidebar,
+.career-sidebar,
+.skills-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100vh;
   display: flex;
-  gap: 15px;
+  flex-direction: column;
+  padding: 24px 16px;
+  background: linear-gradient(180deg, #111827 0%, #172554 100%);
+  color: white;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: 8px 0 30px rgba(15, 23, 42, 0.12);
+}
+
+/* =========================================================
+   SIDEBAR LOGO
+   ========================================================= */
+
+.sidebar-logo {
+  display: flex;
   align-items: center;
-  background: #eff6ff;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.career-goal-icon {
-  font-size: 35px;
-}
-
-.career-select {
-  padding: 12px;
-  width: 100%;
-  max-width: 450px;
-}
-
-/* ===== SKILLS ===== */
-
-.roadmap-skill-list {
-  display: grid;
-  gap: 15px;
-}
-
-.roadmap-skill-card {
-  padding: 15px;
-  background: #f8fafc;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-}
-
-.skill-item-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-
-.skill-bar {
-  height: 22px;
-  background: #ddd;
-  border-radius: 20px;
-  overflow: hidden;
-}
-
-.skill-progress {
-  height: 100%;
-  background: #2563eb;
+  gap: 12px;
+  padding: 8px 8px 24px;
   color: white;
-  text-align: center;
+}
+
+.logo-circle {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #3b82f6, #7c3aed);
+  font-size: 22px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.sidebar-logo > span {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.sidebar-logo > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sidebar-logo strong {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.sidebar-logo span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* =========================================================
+   SIDEBAR MENU
+   ========================================================= */
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sidebar-menu-title {
+  margin: 10px 10px 8px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.workspace-title {
+  margin-top: 22px;
+}
+
+.sidebar-link {
+  width: 100%;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: #cbd5e1;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link > span:first-child {
+  width: 25px;
+  display: inline-flex;
+  justify-content: center;
+  font-size: 19px;
+}
+
+.sidebar-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(2px);
+}
+
+.sidebar-link.active {
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.sidebar-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.sidebar-disabled:hover {
+  transform: none;
+  background: transparent;
+}
+
+.sidebar-disabled small {
+  margin-left: auto;
+  padding: 3px 7px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   SIDEBAR BOTTOM
+   ========================================================= */
+
+.sidebar-spacer {
+  flex: 1;
+  min-height: 25px;
+}
+
+.sidebar-bottom {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.student-mini-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 14px;
+  padding: 6px;
+}
+
+.student-avatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.student-mini-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.student-mini-info strong {
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.student-mini-info span {
+  color: #94a3b8;
   font-size: 12px;
 }
 
-/* ===== BUTTON ===== */
-
-.assessment-button {
-  display: inline-block;
-  padding: 12px 20px;
-  background: #2563eb;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  cursor: pointer;
+.sidebar-logout {
+  width: 100%;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.2s;
 }
 
-.assessment-button:hover {
-  background: #1d4ed8;
+.sidebar-logout:hover {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
 }
 
-.dashboard-button-row {
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.dashboard-main,
+.academics-main,
+.career-main,
+.skills-main,
+.roadmap-main {
+  min-height: 100vh;
+  margin-left: 260px;
+  padding: 30px 38px 50px;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.dashboard-topbar,
+.academics-topbar,
+.career-topbar,
+.skills-topbar,
+.roadmap-topbar {
+  min-height: 60px;
   display: flex;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
 }
 
-/* ===== ASSESSMENT ===== */
+.topbar-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 
-.assessment-info {
+.dashboard-topbar h1,
+.academics-topbar h1,
+.career-topbar h1,
+.skills-topbar h1,
+.roadmap-topbar h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.topbar-right,
+.skills-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notification-button,
+.skills-notification,
+.profile-button,
+.skills-profile {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  color: #334155;
+  font-size: 19px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  transition: 0.2s;
+}
+
+.notification-button:hover,
+.skills-notification:hover,
+.profile-button:hover,
+.skills-profile:hover {
+  transform: translateY(-2px);
+  border-color: #bfdbfe;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================================================
+   WELCOME CARD
+   ========================================================= */
+
+.welcome-card {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 28px;
+  padding: 36px;
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(139, 92, 246, 0.45),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #1d4ed8,
+      #4f46e5,
+      #7c3aed
+    );
+  color: white;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(79, 70, 229, 0.2);
+}
+
+.welcome-card h2 {
+  margin: 0 0 12px;
+  font-size: 38px;
+  line-height: 1.15;
+  font-weight: 850;
+}
+
+.welcome-card p {
+  max-width: 650px;
+  margin: 0 0 24px;
+  color: #e0e7ff;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.welcome-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 11px;
+  background: white;
+  color: #3730a3;
+  font-size: 15px;
+  font-weight: 800;
+  transition: 0.2s;
+}
+
+.welcome-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.action-item {
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: white;
+  color: #172033;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+  transition: all 0.2s ease;
+}
+
+.action-item:hover {
+  transform: translateY(-4px);
+  border-color: #bfdbfe;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.1);
+}
+
+.action-item strong {
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.action-item span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* =========================================================
+   DASHBOARD GRID
+   ========================================================= */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.55fr)
+    minmax(320px, 0.9fr);
+  gap: 24px;
+}
+
+.dashboard-panel {
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.panel-link {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   MODULE CARDS
+   ========================================================= */
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.module-card {
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+  transition: 0.2s;
+}
+
+.module-card:hover {
+  transform: translateY(-3px);
+  border-color: #bfdbfe;
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+}
+
+.module-icon {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  border-radius: 13px;
+  font-size: 22px;
+}
+
+.academics-icon {
+  background: #ede9fe;
+}
+
+.career-icon {
+  background: #dbeafe;
+}
+
+.skills-icon {
+  background: #dcfce7;
+}
+
+.roadmap-icon {
+  background: #ffedd5;
+}
+
+.module-card h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.module-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PROGRESS ROW
+   ========================================================= */
+
+.progress-row {
+  margin-bottom: 20px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.progress-label span:last-child {
+  color: #2563eb;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e5e7eb;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: #2563eb;
+}
+
+.purple-fill {
+  background: #8b5cf6;
+}
+
+.orange-fill {
+  background: #f97316;
+}
+
+.green-fill {
+  background: #22c55e;
+}
+
+.blue-fill {
+  background: #3b82f6;
+}
+
+/* =========================================================
+   CAREER PROGRESS
+   ========================================================= */
+
+.career-progress-box {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 20px;
+  border-radius: 16px;
+  background: #f8fafc;
+}
+
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    conic-gradient(
+      #4f46e5 0 60%,
+      #e5e7eb 60% 100%
+    );
+}
+
+.progress-circle-inner {
+  width: 92px;
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: white;
+  color: #111827;
+  font-size: 24px;
+  font-weight: 850;
+}
+
+.career-progress-info h3 {
+  margin: 0 0 7px;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.career-progress-info p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ACTIVITY
+   ========================================================= */
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 0;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+}
+
+.activity-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eff6ff;
+  font-size: 18px;
+}
+
+.activity-item strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+.activity-item span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* =========================================================
+   COMING SOON
+   ========================================================= */
+
+.coming-soon-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin: 20px 0;
+  gap: 16px;
+  margin-top: 24px;
 }
 
-.assessment-info-item {
-  padding: 15px;
+.coming-soon-card {
+  padding: 22px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 16px;
+  background: #f8fafc;
   text-align: center;
-  background: #f8fafc;
-  border-radius: 8px;
 }
 
-.answer-options {
-  display: grid;
-  gap: 10px;
+.coming-soon-card h3 {
+  margin: 10px 0 6px;
+  font-size: 17px;
 }
 
-.answer-option {
-  padding: 14px;
-  text-align: left;
+.coming-soon-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ACADEMICS PAGE
+   ========================================================= */
+
+.academics-hero,
+.career-hero,
+.skills-hero,
+.roadmap-career-hero {
+  margin-bottom: 28px;
+  padding: 30px;
+  border-radius: 20px;
   background: white;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
 }
 
-.answer-option.selected {
-  background: #2563eb;
-  color: white;
-}
-
-.assessment-progress-bar {
-  height: 10px;
-  background: #ddd;
-  border-radius: 10px;
-}
-
-.assessment-progress-fill {
-  height: 100%;
-  background: #2563eb;
-  border-radius: 10px;
-}
-
-/* ===== ROADMAP ===== */
-
-.roadmap-list {
-  display: grid;
-  gap: 15px;
-}
-
-.roadmap-step {
+.academics-hero {
   display: flex;
-  gap: 15px;
-  padding: 18px;
-  background: #f8fafc;
-  border-radius: 10px;
+  align-items: center;
+  gap: 22px;
+  background:
+    linear-gradient(
+      135deg,
+      #eef2ff,
+      #ffffff
+    );
 }
 
-.roadmap-current {
+.academics-hero-icon,
+.career-hero-icon,
+.skills-hero-icon,
+.roadmap-career-icon {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  font-size: 30px;
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2);
+}
+
+.academics-hero h2,
+.career-hero h2,
+.skills-hero h2,
+.roadmap-career-hero h2 {
+  margin: 0 0 7px;
+  color: #111827;
+  font-size: 30px;
+  font-weight: 850;
+}
+
+.academics-hero p,
+.career-hero p,
+.skills-hero p,
+.roadmap-career-hero p {
+  margin: 0;
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.academics-section,
+.career-section,
+.skills-section,
+.roadmap-section {
+  margin-bottom: 28px;
+}
+
+.academics-section-heading,
+.career-section-heading,
+.skills-section-heading,
+.roadmap-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.academics-section-heading h2,
+.career-section-heading h2,
+.skills-section-heading h2,
+.roadmap-section-heading h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 850;
+  color: #111827;
+}
+
+.academics-section-heading p,
+.career-section-heading p,
+.skills-section-heading p,
+.roadmap-section-heading p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================================================
+   ACADEMIC STATS
+   ========================================================= */
+
+.academic-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.academic-stat-card {
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 7px 25px rgba(15, 23, 42, 0.05);
+}
+
+.academic-stat-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  font-size: 20px;
+}
+
+.academic-stat-icon.purple {
+  background: #ede9fe;
+}
+
+.academic-stat-icon.blue {
+  background: #dbeafe;
+}
+
+.academic-stat-icon.green {
+  background: #dcfce7;
+}
+
+.academic-stat-icon.orange {
+  background: #ffedd5;
+}
+
+.academic-stat-card strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #111827;
+  font-size: 30px;
+  font-weight: 850;
+}
+
+.academic-stat-card span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================================================
+   SUBJECTS
+   ========================================================= */
+
+.subject-list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: white;
+  overflow: hidden;
+}
+
+.subject-row {
+  display: grid;
+  grid-template-columns: 1.3fr 100px 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 22px;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.subject-row:last-child {
+  border-bottom: none;
+}
+
+.subject-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.subject-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eff6ff;
+  font-size: 18px;
+}
+
+.subject-info strong {
+  font-size: 16px;
+}
+
+.subject-result {
+  font-size: 17px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.subject-progress {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e5e7eb;
+}
+
+.subject-progress div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2563eb, #6366f1);
+}
+
+/* =========================================================
+   ACADEMIC SUMMARY
+   ========================================================= */
+
+.academic-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.summary-card {
+  padding: 22px;
+  border-radius: 17px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 7px 22px rgba(15, 23, 42, 0.04);
+}
+
+.summary-card strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 25px;
+  font-weight: 850;
+}
+
+.summary-card span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* =========================================================
+   FUTURE FEATURES
+   ========================================================= */
+
+.future-feature-grid,
+.roadmap-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.future-feature-card,
+.roadmap-feature-card {
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 17px;
+  background: white;
+  transition: 0.2s;
+}
+
+.future-feature-card:hover,
+.roadmap-feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.future-feature-card h3,
+.roadmap-feature-card h3 {
+  margin: 10px 0 6px;
+  font-size: 17px;
+}
+
+.future-feature-card p,
+.roadmap-feature-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.academic-button,
+.career-next-button,
+.skills-primary-button,
+.skills-secondary-button,
+.roadmap-action-button,
+.roadmap-nav-button {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 800;
+  transition: 0.2s;
+}
+
+.primary {
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #6366f1);
+  color: white;
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.2);
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.28);
+}
+
+.secondary {
+  border: 1px solid #dbe3ef;
+  background: white;
+  color: #334155;
+}
+
+.secondary:hover {
+  background: #f8fafc;
+  border-color: #bfdbfe;
+}
+
+/* =========================================================
+   CAREER PAGE
+   ========================================================= */
+
+.career-goal-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+  border-radius: 19px;
+  background: linear-gradient(135deg, #eff6ff, #eef2ff);
+  border: 1px solid #dbeafe;
+}
+
+.career-goal-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: white;
+  font-size: 28px;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.08);
+}
+
+.career-goal-content {
+  flex: 1;
+}
+
+.career-goal-content h3 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 850;
+}
+
+.career-goal-content p {
+  margin: 0 0 12px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.career-goal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.career-goal-tags span {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: white;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.career-goal-progress {
+  min-width: 160px;
+}
+
+.career-progress-bar {
+  height: 9px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #dbeafe;
+}
+
+.career-progress-bar div {
+  height: 100%;
+  border-radius: inherit;
+  background: #2563eb;
+}
+
+/* =========================================================
+   CAREER OPTIONS
+   ========================================================= */
+
+.career-options-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.career-option-card {
+  position: relative;
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 17px;
+  background: white;
+  transition: 0.2s;
+}
+
+.career-option-card:hover {
+  transform: translateY(-4px);
+  border-color: #bfdbfe;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
+}
+
+.career-option-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  border-radius: 13px;
+  background: #eff6ff;
+  font-size: 23px;
+}
+
+.career-option-card h3 {
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.career-option-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.career-option-status {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   CAREER SKILLS
+   ========================================================= */
+
+.career-skills-card {
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: white;
+}
+
+.career-skill-row {
+  margin-bottom: 20px;
+}
+
+.career-skill-row:last-child {
+  margin-bottom: 0;
+}
+
+.career-skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.career-skill-bar {
+  height: 9px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e5e7eb;
+}
+
+.career-skill-bar div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2563eb, #8b5cf6);
+}
+
+/* =========================================================
+   CAREER PROCESS
+   ========================================================= */
+
+.career-process {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.career-process-step {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 17px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  background: white;
+}
+
+.career-process-step.active {
+  border-color: #bfdbfe;
   background: #eff6ff;
 }
 
-.roadmap-number {
-  min-width: 40px;
+.career-process-number {
+  width: 40px;
   height: 40px;
-  background: #2563eb;
-  color: white;
-  border-radius: 50%;
+  flex-shrink: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e5e7eb;
+  font-size: 14px;
+  font-weight: 850;
 }
 
-.roadmap-status {
+.career-process-step.active .career-process-number {
+  background: #2563eb;
+  color: white;
+}
+
+.career-process-content {
+  flex: 1;
+}
+
+.career-process-content h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.career-process-content p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.career-process-icon {
+  font-size: 22px;
+}
+
+.career-process-status {
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.career-process-status.active {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* =========================================================
+   SKILLS PAGE
+   ========================================================= */
+
+.skills-hero {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+}
+
+.skills-hero-content {
+  flex: 1;
+}
+
+.skills-hero-progress {
+  min-width: 180px;
+}
+
+.skills-hero-progress-bar {
+  height: 10px;
+  margin-top: 9px;
+  border-radius: 20px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.skills-hero-progress-bar div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2563eb, #8b5cf6);
+}
+
+.skills-small-title {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* =========================================================
+   SKILLS CAREER SELECTION
+   ========================================================= */
+
+.skills-career-selection {
+  padding: 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: white;
+}
+
+.skills-career-select-box {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.skills-career-info {
+  flex: 1;
+}
+
+.skills-career-info h3 {
+  margin: 0 0 5px;
+  font-size: 20px;
+  font-weight: 850;
+}
+
+.skills-career-info p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.skills-career-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #ede9fe;
+  font-size: 24px;
+}
+
+.skills-career-selection select {
+  min-width: 240px;
+  padding: 12px 14px;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  background: white;
+  color: #172033;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   SKILL MODERN CARDS
+   ========================================================= */
+
+.skills-modern-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.skills-modern-card {
+  padding: 21px;
+  border: 1px solid #e5e7eb;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+}
+
+.skills-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.skills-number {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.skills-modern-card h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.skills-card-value {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.skills-bar {
+  height: 9px;
+  margin-top: 12px;
+  border-radius: 20px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.skills-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+}
+
+.skills-bar-fill.required {
+  background: #cbd5e1;
+}
+
+.skills-bar-fill.current {
+  background: linear-gradient(90deg, #2563eb, #6366f1);
+}
+
+/* =========================================================
+   SKILLS ANALYSIS
+   ========================================================= */
+
+.skills-analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.skills-analysis-card {
+  padding: 23px;
+  border-radius: 18px;
+  background: white;
+  border: 1px solid #e5e7eb;
+}
+
+.skills-analysis-card h3 {
+  margin: 12px 0 6px;
+  font-size: 18px;
+}
+
+.skills-analysis-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.skills-analysis-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #eff6ff;
+  font-size: 21px;
+}
+
+.skills-gap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skills-gap-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skills-gap-number {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fee2e2;
+  color: #dc2626;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+.skills-gap-content {
+  flex: 1;
+}
+
+.skills-gap-content strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.skills-gap-bar {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e5e7eb;
+}
+
+.skills-gap-bar div {
+  height: 100%;
+  background: #f97316;
+  border-radius: inherit;
+}
+
+/* =========================================================
+   SKILLS ASSESSMENT
+   ========================================================= */
+
+.skills-assessment-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 25px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #eef2ff, #eff6ff);
+  border: 1px solid #dbeafe;
+}
+
+.skills-assessment-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: white;
+  font-size: 25px;
+}
+
+.skills-assessment-content {
+  flex: 1;
+}
+
+.skills-assessment-content h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.skills-assessment-content p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =========================================================
+   QUESTION CARD
+   ========================================================= */
+
+.skills-question-card {
+  padding: 28px;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+.skills-question-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.skills-question-progress {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.skills-question-box {
+  margin-bottom: 22px;
+}
+
+.skills-question-box h2 {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.45;
+}
+
+.skills-answer-options {
+  display: grid;
+  gap: 12px;
+}
+
+.skills-answer-option {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid #dbe3ef;
+  border-radius: 12px;
+  background: white;
+  color: #334155;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.skills-answer-option:hover {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+.skills-answer-option.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================================================
+   SKILLS RESULT
+   ========================================================= */
+
+.skills-result-card {
+  padding: 28px;
+  border-radius: 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+}
+
+.skills-result-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.skills-result-icon {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: #dcfce7;
+  font-size: 25px;
+}
+
+.skills-result-header h2 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+.skills-result-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.skills-result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.skills-score-box,
+.skills-result-detail {
+  padding: 20px;
+  border-radius: 15px;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.skills-score-box strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 32px;
+  font-weight: 850;
+  color: #2563eb;
+}
+
+.skills-score-box span,
+.skills-result-detail span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.skills-performance {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.skills-performance-item {
+  padding: 15px;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.skills-performance-item strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+.skills-performance-item span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.skills-result-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+/* =========================================================
+   SKILLS RECOMMENDATIONS
+   ========================================================= */
+
+.skills-recommendation-list {
+  display: grid;
+  gap: 12px;
+}
+
+.skills-recommendation {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  background: white;
+}
+
+.skills-recommendation-number {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #ede9fe;
+  color: #6d28d9;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+/* =========================================================
+   ROADMAP PAGE
+   ========================================================= */
+
+.roadmap-career-hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #eef2ff, #eff6ff);
+}
+
+.roadmap-career-info {
+  flex: 1;
+}
+
+.roadmap-career-info h2 {
+  margin-bottom: 5px;
+}
+
+.roadmap-career-progress {
+  min-width: 190px;
+}
+
+.roadmap-progress-number {
+  font-size: 25px;
+  font-weight: 850;
+  color: #2563eb;
+}
+
+.roadmap-large-progress {
+  height: 10px;
+  margin-top: 9px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #dbeafe;
+}
+
+.roadmap-large-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+}
+
+.roadmap-progress-details {
+  margin-top: 7px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.roadmap-assessment {
+  margin-top: 15px;
+  color: #475569;
+  font-size: 14px;
+}
+
+/* =========================================================
+   ROADMAP SKILLS
+   ========================================================= */
+
+.roadmap-heading-icon {
+  margin-right: 8px;
+  color: #4f46e5;
+}
+
+.roadmap-section-description {
+  margin: -8px 0 18px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.roadmap-success-box {
+  margin-bottom: 18px;
+  padding: 15px 18px;
+  border-radius: 13px;
+  background: #ecfdf5;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.roadmap-modern-skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.roadmap-modern-skill-card {
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+}
+
+.roadmap-skill-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.roadmap-skill-number {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.roadmap-modern-skill-card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.roadmap-skill-progress {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e5e7eb;
+}
+
+.roadmap-skill-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2563eb, #8b5cf6);
+}
+
+.roadmap-skill-values {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* =========================================================
+   MODERN ROADMAP
+   ========================================================= */
+
+.modern-roadmap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.modern-roadmap-step {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 19px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: white;
+}
+
+.modern-roadmap-step.current {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.07);
+}
+
+.modern-roadmap-line {
+  position: absolute;
+  left: 38px;
+  top: 65px;
+  width: 2px;
+  height: 18px;
+  background: #dbe3ef;
+}
+
+.modern-roadmap-number {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.modern-roadmap-step.current .modern-roadmap-number {
+  background: #2563eb;
+  color: white;
+}
+
+.modern-roadmap-content {
+  flex: 1;
+}
+
+.modern-roadmap-title {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.modern-roadmap-content p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.modern-roadmap-icon {
+  font-size: 23px;
+}
+
+.modern-roadmap-status {
   padding: 5px 10px;
-  background: #ddd;
+  border-radius: 20px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.modern-roadmap-status.current {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* =========================================================
+   ROADMAP NEXT ACTION
+   ========================================================= */
+
+.roadmap-next-action {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 23px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #1e3a8a, #4f46e5);
+  color: white;
+}
+
+.roadmap-next-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 24px;
+}
+
+.roadmap-next-content {
+  flex: 1;
+}
+
+.roadmap-next-content h3 {
+  margin: 0 0 5px;
+  font-size: 20px;
+}
+
+.roadmap-next-content p {
+  margin: 0;
+  color: #dbeafe;
+  font-size: 14px;
+}
+
+.roadmap-action-stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  color: #dbeafe;
+  font-size: 12px;
+}
+
+.roadmap-action-button {
+  border: none;
+  background: white;
+  color: #3730a3;
+}
+
+/* =========================================================
+   NAVIGATION / FOOTER
+   ========================================================= */
+
+.academics-navigation,
+.roadmap-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.academics-navigation-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.academics-footer,
+.career-footer,
+.skills-footer,
+.dashboard-footer {
+  margin-top: 35px;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  color: #94a3b8;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* =========================================================
+   LOGIN PAGE
+   ========================================================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(59, 130, 246, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(124, 58, 237, 0.18),
+      transparent 35%
+    ),
+    #f5f7fb;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 460px;
+}
+
+.login-card {
+  padding: 38px;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.1);
+}
+
+.login-logo {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  font-size: 28px;
+  font-weight: 850;
+}
+
+.login-title {
+  margin: 0 0 8px;
+  color: #111827;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 850;
+}
+
+.login-subtitle {
+  margin: 0 0 28px;
+  color: #64748b;
+  text-align: center;
+  font-size: 15px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-form label {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.login-input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #dbe3ef;
+  border-radius: 11px;
+  outline: none;
+  background: white;
+  color: #172033;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.login-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #2563eb, #6366f1);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  transition: 0.2s;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.22);
+}
+
+.login-error {
+  padding: 11px 13px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+.login-link {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.login-footer {
+  margin-top: 22px;
+  color: #94a3b8;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
   border-radius: 20px;
 }
 
-.roadmap-status.current {
-  background: #2563eb;
-  color: white;
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
-/* ===== MOBILE ===== */
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
 
-@media (max-width: 700px) {
-
-  .navbar {
-    flex-direction: column;
-    gap: 15px;
+@media (max-width: 1200px) {
+  .student-sidebar,
+  .academics-sidebar,
+  .career-sidebar,
+  .skills-sidebar {
+    width: 230px;
   }
 
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
+  .dashboard-main,
+  .academics-main,
+  .career-main,
+  .skills-main,
+  .roadmap-main {
+    margin-left: 230px;
+    padding: 28px;
   }
 
-  .dashboard-cards,
-  .progress-cards,
-  .future-feature-grid,
-  .assessment-info {
+  .quick-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .academic-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .academic-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .career-options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-modern-grid,
+  .roadmap-modern-skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .student-sidebar,
+  .academics-sidebar,
+  .career-sidebar,
+  .skills-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 16px;
+    overflow: visible;
+  }
+
+  .sidebar-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sidebar-spacer {
+    display: none;
+  }
+
+  .sidebar-bottom {
+    margin-top: 15px;
+  }
+
+  .dashboard-main,
+  .academics-main,
+  .career-main,
+  .skills-main,
+  .roadmap-main {
+    margin-left: 0;
+    padding: 22px 18px 40px;
+  }
+
+  .dashboard-grid {
     grid-template-columns: 1fr;
   }
 
-  .dashboard-card {
-    margin: 15px;
+  .welcome-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px;
   }
 
-  .skill-item-header {
-    flex-direction: column;
-    gap: 5px;
+  .welcome-card h2 {
+    font-size: 32px;
   }
+
+  .career-goal-card,
+  .skills-hero,
+  .roadmap-career-hero {
+    flex-wrap: wrap;
+  }
+
+  .career-goal-progress,
+  .skills-hero-progress,
+  .roadmap-career-progress {
+    width: 100%;
+  }
+
+  .career-options-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-analysis-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subject-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .subject-result {
+    text-align: left;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+  body {
+    font-size: 15px;
+  }
+
+  .sidebar-menu {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-topbar,
+  .academics-topbar,
+  .career-topbar,
+  .skills-topbar,
+  .roadmap-topbar {
+    align-items: flex-start;
+  }
+
+  .dashboard-topbar h1,
+  .academics-topbar h1,
+  .career-topbar h1,
+  .skills-topbar h1,
+  .roadmap-topbar h1 {
+    font-size: 27px;
+  }
+
+  .topbar-right,
+  .skills-top-actions {
+    display: none;
+  }
+
+  .welcome-card {
+    padding: 24px;
+  }
+
+  .welcome-card h2 {
+    font-size: 28px;
+  }
+
+  .welcome-card p {
+    font-size: 15px;
+  }
+
+  .quick-actions,
+  .module-grid,
+  .coming-soon-grid,
+  .academic-stats-grid,
+  .academic-summary-grid,
+  .career-options-grid,
+  .skills-modern-grid,
+  .skills-performance,
+  .future-feature-grid,
+  .roadmap-modern-skill-grid,
+  .roadmap-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-panel,
+  .academics-hero,
+  .career-hero,
+  .skills-hero,
+  .roadmap-career-hero,
+  .skills-question-card,
+  .skills-result-card {
+    padding: 20px;
+  }
+
+  .academics-section-heading,
+  .career-section-heading,
+  .skills-section-heading,
+  .roadmap-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .academics-section-heading h2,
+  .career-section-heading h2,
+  .skills-section-heading h2,
+  .roadmap-section-heading h2 {
+    font-size: 22px;
+  }
+
+  .academics-hero-icon,
+  .career-hero-icon,
+  .skills-hero-icon,
+  .roadmap-career-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 24px;
+  }
+
+  .academics-hero h2,
+  .career-hero h2,
+  .skills-hero h2,
+  .roadmap-career-hero h2 {
+    font-size: 26px;
+  }
+
+  .skills-career-select-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skills-career-selection select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .career-process-step,
+  .modern-roadmap-step {
+    align-items: flex-start;
+  }
+
+  .career-process-status,
+  .modern-roadmap-status {
+    display: none;
+  }
+
+  .roadmap-next-action {
+    flex-wrap: wrap;
+  }
+
+  .roadmap-action-button {
+    width: 100%;
+  }
+
+  .academics-navigation,
+  .academics-navigation-buttons,
+  .roadmap-navigation {
+    flex-direction: column;
+  }
+
+  .academic-button,
+  .roadmap-nav-button {
+    width: 100%;
+  }
+
+  .login-card {
+    padding: 28px 22px;
+  }
+
+  .login-title {
+    font-size: 26px;
+  }
+}
+/* =========================================================
+   NEW PROFESSIONAL DASHBOARD
+   ========================================================= */
+
+.professional-dashboard {
+  min-height: 100vh;
+  display: flex;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.professional-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 270px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 18px;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(79, 70, 229, 0.22), transparent 35%),
+    linear-gradient(180deg, #0b1020 0%, #111936 55%, #10172d 100%);
+  color: #ffffff;
+  z-index: 1000;
+  overflow-y: auto;
+  box-shadow: 12px 0 40px rgba(15, 23, 42, 0.14);
+}
+
+.brand-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 8px 30px;
+}
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: white;
+  font-size: 22px;
+  font-weight: 900;
+  box-shadow: 0 10px 28px rgba(79, 70, 229, 0.35);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-text strong {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.brand-text span {
+  color: #8f9bb5;
+  font-size: 11px;
+}
+
+.nav-heading {
+  margin: 0 10px 10px;
+  color: #697694;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.community-heading {
+  margin-top: 28px;
+}
+
+.professional-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.professional-nav-link {
+  position: relative;
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: #9ca8c0;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.professional-nav-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  transform: translateX(2px);
+}
+
+.professional-nav-link.active {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.95),
+    rgba(59, 130, 246, 0.9)
+  );
+  color: white;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.22);
+}
+
+.nav-icon {
+  width: 21px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.professional-nav-link small {
+  margin-left: auto;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #71809d;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.professional-nav-link.disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.professional-nav-link.disabled:hover {
+  transform: none;
+  color: #9ca8c0;
+}
+
+.sidebar-bottom-area {
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.sidebar-user-avatar,
+.topbar-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c5cff, #2f9cff);
+  color: white;
+  font-weight: 800;
+}
+
+.sidebar-user-avatar {
+  width: 38px;
+  height: 38px;
+  font-size: 15px;
+}
+
+.sidebar-user-details {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sidebar-user-details strong {
+  color: white;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-user-details span {
+  color: #71809d;
+  font-size: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-logout-button {
+  width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #aab4c9;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.sidebar-logout-button:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.professional-main {
+  width: calc(100% - 270px);
+  min-height: 100vh;
+  margin-left: 270px;
+  padding: 30px 38px 45px;
+}
+
+.professional-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.topbar-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #697694;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.professional-topbar h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 30px;
+  line-height: 1.15;
+  font-weight: 850;
+  letter-spacing: -0.03em;
+}
+
+.professional-topbar p {
+  margin: 8px 0 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.dashboard-icon-button {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e4e9f1;
+  border-radius: 13px;
+  background: white;
+  color: #56627a;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+.dashboard-icon-button:hover {
+  color: #4f46e5;
+  border-color: #c7d2fe;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ef4444;
+  border: 1px solid white;
+}
+
+.topbar-profile {
+  width: 44px;
+  height: 44px;
+  font-size: 16px;
+  box-shadow: 0 7px 18px rgba(79, 70, 229, 0.2);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.dashboard-main-hero {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 22px;
+  padding: 38px 42px;
+  overflow: hidden;
+  border-radius: 24px;
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(59, 130, 246, 0.24),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 65% 90%,
+      rgba(124, 92, 255, 0.18),
+      transparent 30%
+    ),
+    linear-gradient(135deg, #111a35 0%, #182553 50%, #142c59 100%);
+  box-shadow: 0 18px 45px rgba(22, 33, 65, 0.16);
+}
+
+.hero-background-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  right: 150px;
+  top: -150px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.15);
+  filter: blur(10px);
+}
+
+.dashboard-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+
+.hero-small-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 15px;
+  color: #9fb4ff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.dashboard-hero-content h2 {
+  margin: 0;
+  color: white;
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.05;
+  font-weight: 850;
+  letter-spacing: -0.04em;
+}
+
+.dashboard-hero-content h2 span {
+  color: #78a9ff;
+}
+
+.dashboard-hero-content p {
+  max-width: 590px;
+  margin: 18px 0 24px;
+  color: #b4c0d8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.hero-button-row {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  flex-wrap: wrap;
+}
+
+.hero-main-button,
+.hero-outline-button {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 17px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.hero-main-button {
+  background: white;
+  color: #1e293b;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.14);
+}
+
+.hero-main-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-outline-button {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+
+.hero-outline-button:hover {
+  background: rgba(255, 255, 255, 0.11);
+}
+
+.hero-progress-area {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.hero-progress-card {
+  width: 225px;
+  padding: 21px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+}
+
+.hero-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #aebbd5;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.hero-progress-header svg {
+  color: #8baaff;
+}
+
+.dashboard-progress-ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 18px auto;
+}
+
+.dashboard-progress-ring svg {
+  display: block;
+}
+
+.dashboard-progress-ring-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-progress-ring-text strong {
+  color: white;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.dashboard-progress-ring-text span {
+  margin-top: 5px;
+  color: #aebbd5;
+  font-size: 9px;
+}
+
+.hero-progress-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.hero-progress-footer strong {
+  color: white;
+  font-size: 12px;
+}
+
+.hero-progress-footer span {
+  color: #8e9bb4;
+  font-size: 10px;
+}
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+.dashboard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.dashboard-stat-card {
+  position: relative;
+  min-height: 140px;
+  display: flex;
+  gap: 13px;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid #e7ebf2;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
+  transition: 0.2s ease;
+}
+
+.dashboard-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: #d9def0;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.stat-icon {
+  width: 39px;
+  height: 39px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+}
+
+.stat-icon.purple {
+  background: #f0edff;
+  color: #7057dc;
+}
+
+.stat-icon.blue {
+  background: #eaf4ff;
+  color: #2684d9;
+}
+
+.stat-icon.green {
+  background: #eafaf2;
+  color: #159866;
+}
+
+.stat-icon.orange {
+  background: #fff4e8;
+  color: #e48a29;
+}
+
+.stat-content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-content > span {
+  color: #7a869c;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+}
+
+.stat-content > strong {
+  margin: 5px 0 3px;
+  color: #172033;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.stat-content small {
+  color: #8b96a8;
+  font-size: 9px;
+}
+
+.stat-content small b {
+  color: #16a16c;
+  font-weight: 800;
+}
+
+.stat-mini-chart {
+  position: absolute;
+  right: 14px;
+  bottom: 17px;
+  height: 42px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  opacity: 0.7;
+}
+
+.stat-mini-chart span {
+  width: 4px;
+  min-height: 6px;
+  border-radius: 4px 4px 1px 1px;
+}
+
+.purple-chart span {
+  background: #9b8af0;
+}
+
+.blue-chart span {
+  background: #70aef1;
+}
+
+.green-chart span {
+  background: #6dcc9f;
+}
+
+.orange-chart span {
+  background: #f0b46f;
+}
+
+/* =========================================================
+   CONTENT GRID
+   ========================================================= */
+
+.dashboard-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(300px, 0.85fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.dashboard-left-column,
+.dashboard-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-section-card,
+.dashboard-side-card {
+  border: 1px solid #e7ebf2;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.035);
+}
+
+.dashboard-section-card {
+  padding: 25px;
+}
+
+.dashboard-side-card {
+  padding: 23px;
+}
+
+.section-card-header,
+.side-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 21px;
+}
+
+.section-card-header.compact {
+  margin-bottom: 16px;
+}
+
+.section-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #7b879b;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+}
+
+.section-card-header h2,
+.side-card-header h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.section-card-header p {
+  margin: 5px 0 0;
+  color: #8a95a8;
+  font-size: 11px;
+}
+
+.section-count {
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: #f4f6fa;
+  color: #7b879b;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   MODULE CARDS
+   ========================================================= */
+
+.dashboard-module-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.dashboard-module-card {
+  position: relative;
+  min-height: 245px;
+  display: flex;
+  flex-direction: column;
+  padding: 19px;
+  overflow: hidden;
+  border: 1px solid #e7ebf2;
+  border-radius: 16px;
+  background: #ffffff;
+  text-decoration: none;
+  transition: 0.22s ease;
+}
+
+.dashboard-module-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 32px rgba(15, 23, 42, 0.08);
+}
+
+.dashboard-module-card::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  right: -35px;
+  top: -35px;
+  border-radius: 50%;
+  opacity: 0.45;
+}
+
+.academics-card::before {
+  background: #e9e3ff;
+}
+
+.career-card::before {
+  background: #dceeff;
+}
+
+.skills-card::before {
+  background: #dff7ea;
+}
+
+.roadmap-card::before {
+  background: #fff0dc;
+}
+
+.module-top {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.module-large-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+}
+
+.academics-card .module-large-icon {
+  background: #f0edff;
+  color: #7159d9;
+}
+
+.career-card .module-large-icon {
+  background: #eaf4ff;
+  color: #2787d8;
+}
+
+.skills-card .module-large-icon {
+  background: #eafaf2;
+  color: #149866;
+}
+
+.roadmap-card .module-large-icon {
+  background: #fff3e5;
+  color: #df8b2e;
+}
+
+.module-go {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f5f7fa;
+  color: #69758b;
+  transition: 0.2s ease;
+}
+
+.dashboard-module-card:hover .module-go {
+  background: #172033;
+  color: white;
+}
+
+.module-category {
+  margin-bottom: 6px;
+  color: #8994a7;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.dashboard-module-card h3 {
+  margin: 0 0 7px;
+  color: #172033;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.dashboard-module-card p {
+  min-height: 49px;
+  margin: 0;
+  color: #7c879a;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.module-progress {
+  margin-top: auto;
+}
+
+.module-progress > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  color: #8994a7;
+  font-size: 9px;
+}
+
+.module-progress > div:first-child strong {
+  color: #4f5b70;
+}
+
+.module-progress-bar {
+  height: 5px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #eef1f5;
+}
+
+.module-progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.academics-card .module-progress-bar span {
+  background: linear-gradient(90deg, #7660e8, #a28df4);
+}
+
+.career-card .module-progress-bar span {
+  background: linear-gradient(90deg, #3187da, #68b0f2);
+}
+
+.skills-card .module-progress-bar span {
+  background: linear-gradient(90deg, #18a16b, #5dcc9a);
+}
+
+.roadmap-card .module-progress-bar span {
+  background: linear-gradient(90deg, #e58d31, #f2b66d);
+}
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.dashboard-quick-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quick-action-card {
+  display: grid;
+  grid-template-columns: 35px 40px minmax(0, 1fr) 20px;
+  align-items: center;
+  gap: 11px;
+  min-height: 66px;
+  padding: 9px 13px;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  color: #172033;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.quick-action-card:hover {
+  background: #fafbff;
+  border-color: #dce1ef;
+  transform: translateX(3px);
+}
+
+.quick-number {
+  color: #a1aabc;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.quick-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #f0edff;
+  color: #6855d4;
+}
+
+.quick-action-card > div:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.quick-action-card strong {
+  color: #293247;
+  font-size: 11px;
+}
+
+.quick-action-card span {
+  color: #8994a7;
+  font-size: 9px;
+}
+
+.quick-action-card > svg {
+  color: #a0a9b8;
+}
+
+/* =========================================================
+   RIGHT SIDE CAREER
+   ========================================================= */
+
+.side-card-header {
+  margin-bottom: 17px;
+}
+
+.side-card-header > a {
+  width: 31px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #f5f7fa;
+  color: #68748a;
+}
+
+.career-progress-visual {
+  display: flex;
+  justify-content: center;
+  padding: 5px 0 7px;
+}
+
+.career-progress-visual .dashboard-progress-ring {
+  width: 135px;
+  height: 135px;
+}
+
+.career-progress-visual .dashboard-progress-ring svg {
+  width: 135px;
+  height: 135px;
+}
+
+.career-goal-box {
+  margin-top: 5px;
+  padding: 15px;
+  border-radius: 13px;
+  background: #f7f8fc;
+}
+
+.career-goal-box > span {
+  display: block;
+  margin-bottom: 5px;
+  color: #8994a7;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+}
+
+.career-goal-box strong {
+  display: block;
+  color: #293247;
+  font-size: 12px;
+}
+
+.career-goal-box p {
+  margin: 6px 0 0;
+  color: #8b95a7;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.side-primary-button {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 13px;
+  border-radius: 10px;
+  background: #172033;
+  color: white;
+  font-size: 10px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.side-primary-button:hover {
+  background: #2a3650;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   ACTIVITY
+   ========================================================= */
+
+.activity-list-modern {
+  display: flex;
+  flex-direction: column;
+}
+
+.modern-activity {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 0;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.modern-activity:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.activity-status {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+}
+
+.activity-status.completed {
+  background: #eafaf2;
+  color: #169b68;
+}
+
+.modern-activity > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.modern-activity strong {
+  color: #364054;
+  font-size: 10px;
+}
+
+.modern-activity span {
+  color: #9aa3b2;
+  font-size: 9px;
+}
+
+/* =========================================================
+   FUTURE CARD
+   ========================================================= */
+
+.future-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(124, 92, 255, 0.1),
+      transparent 35%
+    ),
+    white;
+}
+
+.future-card-icon {
+  width: 39px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  border-radius: 11px;
+  background: #f0edff;
+  color: #735cdf;
+}
+
+.future-card h2 {
+  margin: 0;
+  color: #293247;
+  font-size: 16px;
+}
+
+.future-card p {
+  margin: 7px 0 14px;
+  color: #8994a7;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.future-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.future-tags span {
+  padding: 5px 8px;
+  border: 1px solid #e8eaf1;
+  border-radius: 6px;
+  background: #fafbfc;
+  color: #778296;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.professional-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 25px;
+  padding: 18px 3px 0;
+  border-top: 1px solid #e6eaf0;
+}
+
+.professional-footer > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.professional-footer strong {
+  color: #4c586d;
+  font-size: 10px;
+}
+
+.professional-footer span {
+  color: #9aa3b2;
+  font-size: 9px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1250px) {
+  .professional-main {
+    padding: 25px;
+  }
+
+  .dashboard-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-right-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+
+  .future-card {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .professional-sidebar {
+    width: 220px;
+  }
+
+  .professional-main {
+    width: calc(100% - 220px);
+    margin-left: 220px;
+  }
+
+  .dashboard-main-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-progress-area {
+    align-self: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .professional-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+  }
+
+  .professional-main {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px 15px 35px;
+  }
+
+  .professional-dashboard {
+    display: block;
+  }
+
+  .sidebar-bottom-area {
+    margin-top: 20px;
+  }
+
+  .professional-topbar {
+    align-items: flex-start;
+  }
+
+  .professional-topbar h1 {
+    font-size: 25px;
+  }
+
+  .dashboard-main-hero {
+    padding: 28px 23px;
+  }
+
+  .dashboard-hero-content h2 {
+    font-size: 36px;
+  }
+
+  .dashboard-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-module-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-right-column {
+    display: flex;
+  }
+
+  .future-card {
+    grid-column: auto;
+  }
+
+  .professional-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .professional-topbar {
+    flex-direction: column;
+  }
+
+  .topbar-actions {
+    width: 100%;
+  }
+
+  .dashboard-main-hero {
+    padding: 23px 19px;
+  }
+
+  .dashboard-hero-content h2 {
+    font-size: 31px;
+  }
+
+  .dashboard-section-card,
+  .dashboard-side-card {
+    padding: 18px;
+  }
+
+  .quick-action-card {
+    grid-template-columns: 25px 35px minmax(0, 1fr) 18px;
+    gap: 7px;
+  }
+}
+/* =========================================================
+   DASHBOARD TYPOGRAPHY BOOST
+   ========================================================= */
+
+/* Sidebar */
+.professional-nav-link {
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.nav-heading {
+  font-size: 11px;
+}
+
+.brand-text strong {
+  font-size: 18px;
+}
+
+.brand-text span {
+  font-size: 12px;
+}
+
+.sidebar-user-details strong {
+  font-size: 13px;
+}
+
+.sidebar-user-details span {
+  font-size: 11px;
+}
+
+.sidebar-logout-button {
+  font-size: 14px;
+}
+
+/* Top header */
+.topbar-label {
+  font-size: 11px;
+}
+
+.professional-topbar h1 {
+  font-size: 34px;
+}
+
+.professional-topbar p {
+  font-size: 16px;
+}
+
+/* Hero */
+.hero-small-label {
+  font-size: 11px;
+}
+
+.dashboard-hero-content p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.hero-main-button,
+.hero-outline-button {
+  font-size: 14px;
+}
+
+/* Hero progress */
+.hero-progress-header {
+  font-size: 11px;
+}
+
+.hero-progress-footer strong {
+  font-size: 14px;
+}
+
+.hero-progress-footer span {
+  font-size: 12px;
+}
+
+.dashboard-progress-ring-text strong {
+  font-size: 26px;
+}
+
+.dashboard-progress-ring-text span {
+  font-size: 11px;
+}
+
+/* Statistics */
+.stat-content > span {
+  font-size: 11px;
+}
+
+.stat-content > strong {
+  font-size: 29px;
+}
+
+.stat-content small {
+  font-size: 11px;
+}
+
+/* Section headings */
+.section-label {
+  font-size: 10px;
+}
+
+.section-card-header h2,
+.side-card-header h2 {
+  font-size: 22px;
+}
+
+.section-card-header p {
+  font-size: 13px;
+}
+
+.section-count {
+  font-size: 11px;
+}
+
+/* Learning cards */
+.module-category {
+  font-size: 10px;
+}
+
+.dashboard-module-card h3 {
+  font-size: 19px;
+}
+
+.dashboard-module-card p {
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.module-progress > div:first-child {
+  font-size: 11px;
+}
+
+/* Quick actions */
+.quick-number {
+  font-size: 11px;
+}
+
+.quick-action-card strong {
+  font-size: 13px;
+}
+
+.quick-action-card span {
+  font-size: 11px;
+}
+
+/* Career panel */
+.career-goal-box > span {
+  font-size: 10px;
+}
+
+.career-goal-box strong {
+  font-size: 14px;
+}
+
+.career-goal-box p {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.side-primary-button {
+  font-size: 12px;
+}
+
+/* Activity */
+.modern-activity strong {
+  font-size: 12px;
+}
+
+.modern-activity span {
+  font-size: 11px;
+}
+
+/* Coming soon */
+.future-card h2 {
+  font-size: 19px;
+}
+
+.future-card p {
+  font-size: 12px;
+}
+
+.future-tags span {
+  font-size: 10px;
+}
+
+/* Footer */
+.professional-footer strong {
+  font-size: 11px;
+}
+
+.professional-footer span {
+  font-size: 10px;
+}
+/* =========================================================
+   PROFESSIONAL ACADEMICS PAGE
+   ========================================================= */
+
+.academic-modern-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+.academic-modern-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 270px;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(79, 70, 229, .22), transparent 35%),
+    linear-gradient(180deg, #0b1020, #111936 55%, #10172d);
+  color: white;
+  z-index: 1000;
+}
+
+.academic-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 8px 30px;
+}
+
+.academic-brand-logo {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  font-size: 22px;
+  font-weight: 900;
+  box-shadow: 0 10px 28px rgba(79,70,229,.35);
+}
+
+.academic-brand strong {
+  display: block;
+  font-size: 18px;
+}
+
+.academic-brand span {
+  display: block;
+  margin-top: 3px;
+  color: #8f9bb5;
+  font-size: 12px;
+}
+
+.academic-nav-title {
+  margin: 0 10px 10px;
+  color: #697694;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.academic-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.academic-nav a,
+.academic-nav button {
+  width: 100%;
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: #9ca8c0;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: left;
+  transition: .2s ease;
+}
+
+.academic-nav a:hover,
+.academic-nav button:hover {
+  background: rgba(255,255,255,.06);
+  color: white;
+}
+
+.academic-nav a.active {
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: white;
+  box-shadow: 0 8px 24px rgba(59,130,246,.22);
+}
+
+.academic-nav a span,
+.academic-nav button span {
+  width: 21px;
+  text-align: center;
+  font-size: 19px;
+}
+
+.academic-nav button {
+  cursor: not-allowed;
+  opacity: .6;
+}
+
+.academic-nav button small {
+  margin-left: auto;
+  color: #71809d;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.academic-sidebar-bottom {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+
+.academic-user {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.academic-user-avatar {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#7c5cff,#2f9cff);
+  font-weight: 800;
+}
+
+.academic-user strong {
+  display: block;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.academic-user span {
+  display: block;
+  margin-top: 3px;
+  color: #71809d;
+  font-size: 11px;
+}
+
+/* MAIN */
+
+.academic-modern-main {
+  min-height: 100vh;
+  margin-left: 270px;
+  padding: 30px 38px 50px;
+}
+
+.academic-modern-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 27px;
+}
+
+.academic-header-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #697694;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.academic-modern-header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 34px;
+  line-height: 1.15;
+  letter-spacing: -.03em;
+}
+
+.academic-modern-header p {
+  margin: 9px 0 0;
+  color: #718096;
+  font-size: 16px;
+}
+
+.academic-header-avatar {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#7c5cff,#2f9cff);
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+/* HERO */
+
+.academic-hero-modern {
+  min-height: 285px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 38px 42px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(59,130,246,.25), transparent 32%),
+    linear-gradient(135deg,#111a35,#192958 55%,#142c59);
+  box-shadow: 0 18px 45px rgba(22,33,65,.14);
+}
+
+.academic-hero-content > span {
+  color: #9fb4ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.academic-hero-content h2 {
+  margin: 14px 0 15px;
+  color: white;
+  font-size: 46px;
+  line-height: 1.05;
+  letter-spacing: -.04em;
+}
+
+.academic-hero-content h2 strong {
+  color: #78a9ff;
+}
+
+.academic-hero-content p {
+  max-width: 570px;
+  margin: 0;
+  color: #b4c0d8;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.academic-score-card {
+  width: 235px;
+  flex-shrink: 0;
+  padding: 22px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 20px;
+  background: rgba(255,255,255,.07);
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+
+.academic-score-ring {
+  width: 145px;
+  height: 145px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center,#17254c 58%,transparent 59%),
+    conic-gradient(#7c5cff 85%,rgba(255,255,255,.12) 0);
+}
+
+.academic-score-ring div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.academic-score-ring strong {
+  color: white;
+  font-size: 30px;
+}
+
+.academic-score-ring span {
+  color: #aebbd5;
+  font-size: 11px;
+}
+
+.score-label {
+  display: block;
+  color: #8e9bb4;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.score-status {
+  display: block;
+  margin-top: 5px;
+  color: white;
+  font-size: 14px;
+}
+
+/* STATS */
+
+.academic-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.academic-stat {
+  min-height: 125px;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 20px;
+  border: 1px solid #e7ebf2;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(15,23,42,.035);
+}
+
+.academic-stat-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.academic-stat-icon.purple {
+  background: #f0edff;
+  color: #7057dc;
+}
+
+.academic-stat-icon.blue {
+  background: #eaf4ff;
+  color: #2684d9;
+}
+
+.academic-stat-icon.green {
+  background: #eafaf2;
+  color: #159866;
+}
+
+.academic-stat-icon.orange {
+  background: #fff4e8;
+  color: #e48a29;
+}
+
+.academic-stat > div:last-child {
+  display: flex;
+  flex-direction: column;
+}
+
+.academic-stat > div:last-child > span {
+  color: #7a869c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .07em;
+}
+
+.academic-stat > div:last-child > strong {
+  margin: 5px 0 3px;
+  color: #172033;
+  font-size: 28px;
+}
+
+.academic-stat > div:last-child > small {
+  color: #8b96a8;
+  font-size: 11px;
+}
+
+/* CONTENT */
+
+.academic-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1.65fr) minmax(300px,.85fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.academic-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.academic-card {
+  padding: 25px;
+  border: 1px solid #e7ebf2;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(15,23,42,.035);
+}
+
+.academic-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 21px;
+}
+
+.academic-card-header span {
+  display: block;
+  margin-bottom: 6px;
+  color: #7b879b;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .13em;
+}
+
+.academic-card-header h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 21px;
+}
+
+.academic-card-header button {
+  padding: 9px 12px;
+  border: 1px solid #e4e8ef;
+  border-radius: 8px;
+  background: #fafbfc;
+  color: #667287;
+  font-size: 11px;
+}
+
+/* SUBJECT TABLE */
+
+.subject-table-head,
+.subject-row {
+  display: grid;
+  grid-template-columns: minmax(230px,1.8fr) 100px 75px minmax(120px,1fr);
+  align-items: center;
+  gap: 15px;
+}
+
+.subject-table-head {
+  padding: 0 10px 12px;
+  border-bottom: 1px solid #edf0f4;
+  color: #9aa3b2;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: .08em;
+}
+
+.subject-row {
+  min-height: 78px;
+  padding: 11px 10px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.subject-row:last-child {
+  border-bottom: 0;
+}
+
+.subject-name {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.subject-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.subject-icon.purple {
+  background: #f0edff;
+  color: #7057dc;
+}
+
+.subject-icon.blue {
+  background: #eaf4ff;
+  color: #2684d9;
+}
+
+.subject-icon.green {
+  background: #eafaf2;
+  color: #159866;
+}
+
+.subject-icon.orange {
+  background: #fff4e8;
+  color: #e48a29;
+}
+
+.subject-icon.pink {
+  background: #fff0f5;
+  color: #db5b91;
+}
+
+.subject-name div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.subject-name strong {
+  color: #293247;
+  font-size: 13px;
+}
+
+.subject-name span {
+  color: #9aa3b2;
+  font-size: 10px;
+}
+
+.subject-row > strong {
+  color: #455168;
+  font-size: 12px;
+}
+
+.grade {
+  width: fit-content;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.grade.excellent {
+  background: #eafaf2;
+  color: #159866;
+}
+
+.grade.good {
+  background: #eef4ff;
+  color: #3976d5;
+}
+
+.subject-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subject-progress > span {
+  flex: 1;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #eef1f5;
+}
+
+.subject-progress i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg,#6c5ce7,#4ca4ee);
+}
+
+.subject-progress small {
+  color: #7d899d;
+  font-size: 10px;
+}
+
+/* ATTENDANCE */
+
+.attendance-card {
+  text-align: center;
+}
+
+.attendance-card .academic-card-header {
+  text-align: left;
+}
+
+.attendance-circle {
+  width: 155px;
+  height: 155px;
+  margin: 10px auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle,#fff 58%,transparent 59%),
+    conic-gradient(#20a873 91%,#e7f3ed 0);
+}
+
+.attendance-circle div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.attendance-circle strong {
+  color: #172033;
+  font-size: 31px;
+}
+
+.attendance-circle span {
+  margin-top: 3px;
+  color: #8994a7;
+  font-size: 11px;
+}
+
+.attendance-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 13px;
+}
+
+.attendance-info div {
+  padding: 10px;
+  border-radius: 9px;
+  background: #f7f8fa;
+}
+
+.attendance-info span {
+  display: block;
+  color: #8c97a9;
+  font-size: 10px;
+}
+
+.attendance-info strong {
+  display: block;
+  margin-top: 4px;
+  color: #364054;
+  font-size: 13px;
+}
+
+.attendance-bar {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #edf0f4;
+}
+
+.attendance-bar span {
+  display: block;
+  width: 91%;
+  height: 100%;
+  border-radius: inherit;
+  background: #20a873;
+}
+
+.attendance-card p {
+  margin: 12px 0 0;
+  color: #8a95a7;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* INSIGHTS */
+
+.academic-insight {
+  display: flex;
+  gap: 11px;
+  padding: 13px 0;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.academic-insight:last-child {
+  border-bottom: 0;
+}
+
+.insight-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  font-weight: 800;
+}
+
+.insight-icon.green {
+  background: #eafaf2;
+  color: #159866;
+}
+
+.insight-icon.purple {
+  background: #f0edff;
+  color: #7057dc;
+}
+
+.insight-icon.orange {
+  background: #fff4e8;
+  color: #e48a29;
+}
+
+.academic-insight strong {
+  color: #364054;
+  font-size: 12px;
+}
+
+.academic-insight p {
+  margin: 4px 0 0;
+  color: #8a95a7;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+/* ACTIVITY */
+
+.academic-activity-card {
+  margin-top: 20px;
+}
+
+.academic-activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+}
+
+.academic-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #edf0f4;
+  border-radius: 12px;
+  background: #fafbfc;
+}
+
+.activity-date {
+  width: 40px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #eef1ff;
+  color: #6658d5;
+}
+
+.activity-date strong {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.activity-date span {
+  margin-top: 3px;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.academic-activity-item > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.academic-activity-item strong {
+  color: #364054;
+  font-size: 11px;
+}
+
+.academic-activity-item span {
+  color: #8b96a8;
+  font-size: 10px;
+}
+
+/* FOOTER */
+
+.academic-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid #e6eaf0;
+}
+
+.academic-footer strong {
+  color: #4c586d;
+  font-size: 11px;
+}
+
+.academic-footer span {
+  color: #9aa3b2;
+  font-size: 10px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+  .academic-stat-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .academic-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academic-activity-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .academic-modern-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .academic-modern-main {
+    margin-left: 0;
+  }
+
+  .academic-modern-page {
+    display: block;
+  }
+
+  .academic-hero-modern {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .academic-score-card {
+    align-self: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .academic-modern-main {
+    padding: 20px 15px 35px;
+  }
+
+  .academic-modern-header h1 {
+    font-size: 27px;
+  }
+
+  .academic-modern-header p {
+    font-size: 14px;
+  }
+
+  .academic-hero-modern {
+    padding: 27px 22px;
+  }
+
+  .academic-hero-content h2 {
+    font-size: 35px;
+  }
+
+  .academic-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .academic-card {
+    padding: 18px;
+  }
+
+  .subject-table {
+    overflow-x: auto;
+  }
+
+  .subject-table-head,
+  .subject-row {
+    min-width: 700px;
+  }
+
+  .academic-footer {
+    flex-direction: column;
+  }
+}
+/* =========================================================
+   ACADEMICS FONT SIZE BOOST
+   ========================================================= */
+
+.academic-modern-main {
+  font-size: 16px;
+}
+
+.academic-modern-header h1 {
+  font-size: 38px;
+}
+
+.academic-modern-header p {
+  font-size: 17px;
+}
+
+.academic-header-label {
+  font-size: 13px;
+}
+
+.academic-hero-content > span {
+  font-size: 13px;
+}
+
+.academic-hero-content h2 {
+  font-size: 50px;
+}
+
+.academic-hero-content p {
+  font-size: 17px;
+}
+
+.academic-score-ring strong {
+  font-size: 34px;
+}
+
+.score-label {
+  font-size: 12px;
+}
+
+.score-status {
+  font-size: 15px;
+}
+
+.academic-stat > div:last-child > span {
+  font-size: 12px;
+}
+
+.academic-stat > div:last-child > strong {
+  font-size: 31px;
+}
+
+.academic-stat > div:last-child > small {
+  font-size: 13px;
+}
+
+.academic-card-header span {
+  font-size: 12px;
+}
+
+.academic-card-header h2 {
+  font-size: 24px;
+}
+
+.academic-card-header button {
+  font-size: 13px;
+}
+
+.subject-table-head {
+  font-size: 11px;
+}
+
+.subject-name strong {
+  font-size: 15px;
+}
+
+.subject-name span {
+  font-size: 12px;
+}
+
+.subject-row > strong {
+  font-size: 14px;
+}
+
+.grade {
+  font-size: 12px;
+}
+
+.subject-progress small {
+  font-size: 12px;
+}
+
+.attendance-circle strong {
+  font-size: 35px;
+}
+
+.attendance-circle span {
+  font-size: 12px;
+}
+
+.attendance-info span {
+  font-size: 11px;
+}
+
+.attendance-info strong {
+  font-size: 15px;
+}
+
+.attendance-card p {
+  font-size: 13px;
+}
+
+.academic-insight strong {
+  font-size: 14px;
+}
+
+.academic-insight p {
+  font-size: 12px;
+}
+
+.academic-activity-item strong {
+  font-size: 13px;
+}
+
+.academic-activity-item span {
+  font-size: 12px;
+}
+
+.academic-footer strong {
+  font-size: 12px;
+}
+
+.academic-footer span {
+  font-size: 11px;
+}
+/* =========================================================
+   PROFESSIONAL CAREER PAGE
+   ========================================================= */
+
+.career-modern-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  color: #172033;
+}
+
+/* ================= SIDEBAR ================= */
+
+.career-modern-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: 270px;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(99,102,241,.22), transparent 34%),
+    linear-gradient(180deg, #0b1020, #111936 55%, #10172d);
+  color: white;
+  z-index: 1000;
+}
+
+.career-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 3px 8px 30px;
+}
+
+.career-brand-logo {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: white;
+  font-size: 15px;
+  font-weight: 900;
+  box-shadow: 0 10px 28px rgba(79,70,229,.35);
+}
+
+.career-brand strong {
+  display: block;
+  font-size: 18px;
+}
+
+.career-brand span {
+  display: block;
+  margin-top: 3px;
+  color: #8f9bb5;
+  font-size: 12px;
+}
+
+.career-nav-label {
+  margin: 0 10px 10px;
+  color: #697694;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.career-modern-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.career-modern-nav a,
+.career-modern-nav button {
+  width: 100%;
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: #9ca8c0;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: left;
+  transition: .2s ease;
+}
+
+.career-modern-nav a:hover,
+.career-modern-nav button:hover {
+  background: rgba(255,255,255,.06);
+  color: white;
+}
+
+.career-modern-nav a.active {
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: white;
+  box-shadow: 0 8px 24px rgba(59,130,246,.22);
+}
+
+.career-modern-nav a > span,
+.career-modern-nav button > span {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.career-modern-nav button {
+  cursor: not-allowed;
+  opacity: .58;
+}
+
+.career-modern-nav button small {
+  margin-left: auto;
+  color: #687694;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .05em;
+}
+
+.career-sidebar-bottom {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+
+.career-sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.career-user-avatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#7c5cff,#2f9cff);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.career-sidebar-user strong {
+  display: block;
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: white;
+  font-size: 13px;
+}
+
+.career-sidebar-user span {
+  display: block;
+  margin-top: 3px;
+  color: #71809d;
+  font-size: 11px;
+}
+
+/* ================= MAIN ================= */
+
+.career-modern-main {
+  min-height: 100vh;
+  margin-left: 270px;
+  padding: 30px 38px 50px;
+}
+
+.career-modern-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 27px;
+}
+
+.career-header-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #697694;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .13em;
+}
+
+.career-modern-header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 38px;
+  line-height: 1.15;
+  letter-spacing: -.035em;
+}
+
+.career-modern-header p {
+  margin: 9px 0 0;
+  color: #718096;
+  font-size: 17px;
+}
+
+.career-header-avatar {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#7c5cff,#2f9cff);
+  color: white;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+/* ================= HERO ================= */
+
+.career-modern-hero {
+  position: relative;
+  min-height: 335px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 45px 48px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  border-radius: 25px;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(77,139,255,.26), transparent 32%),
+    radial-gradient(circle at 60% 100%, rgba(124,92,255,.18), transparent 35%),
+    linear-gradient(135deg,#101a38,#192b59 58%,#132a55);
+  box-shadow: 0 18px 45px rgba(22,33,65,.14);
+}
+
+.career-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.career-hero-content > span {
+  color: #9fb4ff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.career-hero-content h2 {
+  margin: 15px 0 16px;
+  color: white;
+  font-size: 48px;
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+
+.career-hero-content h2 strong {
+  color: #7faaff;
+}
+
+.career-hero-content p {
+  max-width: 590px;
+  margin: 0;
+  color: #b7c2da;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.career-hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 27px;
+}
+
+.career-primary-button,
+.career-secondary-button {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 17px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: .2s ease;
+}
+
+.career-primary-button {
+  background: white;
+  color: #29386a;
+  box-shadow: 0 8px 25px rgba(0,0,0,.12);
+}
+
+.career-primary-button:hover {
+  transform: translateY(-2px);
+}
+
+.career-secondary-button {
+  border: 1px solid rgba(255,255,255,.2);
+  color: white;
+  background: rgba(255,255,255,.07);
+}
+
+.career-secondary-button:hover {
+  background: rgba(255,255,255,.12);
+}
+
+.career-hero-visual {
+  position: relative;
+  width: 285px;
+  height: 245px;
+  flex-shrink: 0;
+}
+
+.career-orbit {
+  position: absolute;
+  border: 1px solid rgba(145,174,255,.25);
+  border-radius: 50%;
+}
+
+.orbit-one {
+  width: 230px;
+  height: 230px;
+  top: 7px;
+  left: 27px;
+}
+
+.orbit-two {
+  width: 165px;
+  height: 165px;
+  top: 40px;
+  left: 60px;
+}
+
+.career-target-icon {
+  position: absolute;
+  top: 75px;
+  left: 101px;
+  width: 95px;
+  height: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 28px;
+  background: rgba(255,255,255,.08);
+  color: #91b6ff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 15px 40px rgba(0,0,0,.18);
+}
+
+.career-floating-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 13px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 9px;
+  background: rgba(255,255,255,.1);
+  color: white;
+  backdrop-filter: blur(10px);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.career-floating-card.card-one {
+  top: 31px;
+  right: 0;
+}
+
+.career-floating-card.card-two {
+  bottom: 28px;
+  left: 0;
+  color: #b8c8ff;
+}
+
+/* ================= SECTION ================= */
+
+.career-modern-section {
+  margin-bottom: 25px;
+}
+
+.career-section-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.career-section-title span {
+  display: block;
+  margin-bottom: 6px;
+  color: #7d899d;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: .13em;
+}
+
+.career-section-title h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 25px;
+  letter-spacing: -.025em;
+}
+
+.career-section-title > p {
+  margin: 0;
+  color: #8994a7;
+  font-size: 13px;
+}
+
+/* ================= GOAL ================= */
+
+.career-goal-modern {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  padding: 25px;
+  border: 1px solid #e5eaf1;
+  border-radius: 19px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(15,23,42,.035);
+}
+
+.career-goal-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  flex: 1;
+}
+
+.career-goal-icon-modern {
+  width: 57px;
+  height: 57px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: #eeecff;
+  color: #6957db;
+}
+
+.career-goal-main > div:last-child > span {
+  display: block;
+  color: #8994a7;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .12em;
+}
+
+.career-goal-main h3 {
+  margin: 6px 0 7px;
+  color: #202a3d;
+  font-size: 22px;
+}
+
+.career-goal-main p {
+  max-width: 590px;
+  margin: 0;
+  color: #7c879a;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.career-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.career-tags span {
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: #f3f5fa;
+  color: #657187;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.career-goal-progress-modern {
+  width: 270px;
+  flex-shrink: 0;
+}
+
+.career-progress-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.career-progress-heading span {
+  color: #7e899c;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .08em;
+}
+
+.career-progress-heading strong {
+  color: #6554d9;
+  font-size: 15px;
+}
+
+.career-modern-progress-bar {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #edf0f5;
+}
+
+.career-modern-progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg,#6957dc,#398ee9);
+}
+
+.career-goal-progress-modern small {
+  display: block;
+  margin-top: 9px;
+  color: #929cae;
+  font-size: 10px;
+}
+
+/* ================= OPTIONS ================= */
+
+.career-options-modern {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 15px;
+}
+
+.career-option-modern {
+  min-height: 205px;
+  padding: 21px;
+  border: 1px solid #e5eaf1;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(15,23,42,.035);
+  transition: .2s ease;
+}
+
+.career-option-modern:hover {
+  transform: translateY(-3px);
+  border-color: #d5d9f6;
+  box-shadow: 0 12px 30px rgba(15,23,42,.07);
+}
+
+.career-option-modern.selected {
+  border-color: #aaa1ed;
+  box-shadow: 0 10px 28px rgba(105,87,219,.1);
+}
+
+.career-option-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.career-option-icon-modern {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #f0edff;
+  color: #6857da;
+}
+
+.career-selected-badge {
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: #eafaf2;
+  color: #159866;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.career-option-modern h3 {
+  margin: 17px 0 7px;
+  color: #273146;
+  font-size: 17px;
+}
+
+.career-option-modern p {
+  min-height: 49px;
+  margin: 0;
+  color: #858fa1;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.career-explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  color: #6554d9;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* ================= SKILLS ================= */
+
+.career-skills-modern {
+  display: grid;
+  grid-template-columns: .8fr 1.5fr;
+  gap: 25px;
+  padding: 25px;
+  border: 1px solid #e5eaf1;
+  border-radius: 19px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(15,23,42,.035);
+}
+
+.career-skills-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 15px;
+  background: #f8f9fd;
+  text-align: center;
+}
+
+.career-skills-summary-ring {
+  width: 145px;
+  height: 145px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle,#f8f9fd 58%,transparent 59%),
+    conic-gradient(#6957dc 74%,#e5e7f1 0);
+}
+
+.career-skills-summary-ring strong {
+  color: #273146;
+  font-size: 31px;
+}
+
+.career-skills-summary-ring span {
+  margin-top: 3px;
+  color: #8b96a8;
+  font-size: 11px;
+}
+
+.career-skills-summary h3 {
+  margin: 19px 0 7px;
+  color: #273146;
+  font-size: 17px;
+}
+
+.career-skills-summary p {
+  max-width: 260px;
+  margin: 0;
+  color: #8994a7;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.career-skills-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.career-skill-modern {
+  display: grid;
+  grid-template-columns: minmax(230px,1fr) minmax(180px,1.5fr);
+  align-items: center;
+  gap: 20px;
+  min-height: 68px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.career-skill-modern:last-child {
+  border-bottom: 0;
+}
+
+.career-skill-name {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.skill-icon {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+}
+
+.skill-icon.purple {
+  background: #f0edff;
+  color: #6957db;
+}
+
+.skill-icon.blue {
+  background: #eaf4ff;
+  color: #2684d9;
+}
+
+.skill-icon.green {
+  background: #eafaf2;
+  color: #159866;
+}
+
+.skill-icon.orange {
+  background: #fff4e8;
+  color: #e48a29;
+}
+
+.skill-icon.pink {
+  background: #fff0f5;
+  color: #d85c91;
+}
+
+.career-skill-name > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.career-skill-name strong {
+  color: #344056;
+  font-size: 13px;
+}
+
+.career-skill-name span {
+  color: #929cad;
+  font-size: 10px;
+}
+
+.career-skill-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.career-skill-track {
+  flex: 1;
+  height: 7px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #edf0f4;
+}
+
+.career-skill-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg,#6957dc,#398ee9);
+}
+
+.career-skill-progress > strong {
+  width: 35px;
+  color: #59667b;
+  font-size: 12px;
+  text-align: right;
+}
+
+/* ================= PROCESS ================= */
+
+.career-process-modern {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.career-process-modern-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48px 46px 1fr;
+  align-items: center;
+  gap: 15px;
+  min-height: 100px;
+  padding: 17px 20px;
+  border: 1px solid #e5eaf1;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(15,23,42,.025);
+  transition: .2s ease;
+}
+
+.career-process-modern-item:hover {
+  transform: translateX(3px);
+}
+
+.career-process-modern-item.active {
+  border-color: #aaa1ed;
+  background: linear-gradient(90deg,#faf9ff,#fff);
+  box-shadow: 0 8px 25px rgba(105,87,219,.08);
+}
+
+.career-step-number {
+  color: #a3adbc;
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: .05em;
+}
+
+.career-process-modern-item.active .career-step-number {
+  color: #6957db;
+}
+
+.career-step-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #f0edff;
+  color: #6957db;
+}
+
+.career-step-content {
+  min-width: 0;
+}
+
+.career-step-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.career-step-title-row h3 {
+  margin: 0;
+  color: #2d374c;
+  font-size: 15px;
+}
+
+.career-step-title-row span {
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: #f3f5f8;
+  color: #8994a7;
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.career-step-title-row span.current {
+  background: #eeeaff;
+  color: #6957db;
+}
+
+.career-step-content p {
+  margin: 6px 0 0;
+  color: #8994a7;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ================= NEXT STEP ================= */
+
+.career-next-modern {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 24px 27px;
+  margin-top: 30px;
+  border: 1px solid #d9ddff;
+  border-radius: 19px;
+  background:
+    radial-gradient(circle at 90% 50%, rgba(99,102,241,.11), transparent 35%),
+    linear-gradient(135deg,#f7f6ff,#f4f8ff);
+}
+
+.career-next-icon {
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: #e9e6ff;
+  color: #6957db;
+}
+
+.career-next-content {
+  flex: 1;
+}
+
+.career-next-content > span {
+  color: #7568ce;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: .13em;
+}
+
+.career-next-content h2 {
+  margin: 5px 0;
+  color: #29344b;
+  font-size: 20px;
+}
+
+.career-next-content p {
+  margin: 0;
+  color: #818da0;
+  font-size: 12px;
+}
+
+.career-next-button-modern {
+  min-height: 45px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: #5e54c9;
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 750;
+  box-shadow: 0 8px 20px rgba(94,84,201,.2);
+  transition: .2s ease;
+}
+
+.career-next-button-modern:hover {
+  transform: translateY(-2px);
+  background: #5147ba;
+}
+
+/* ================= FOOTER ================= */
+
+.career-modern-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 27px;
+  padding-top: 20px;
+  border-top: 1px solid #e4e8ee;
+}
+
+.career-modern-footer div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.career-modern-footer strong {
+  color: #4d586b;
+  font-size: 12px;
+}
+
+.career-modern-footer span {
+  color: #99a2b0;
+  font-size: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .career-options-modern {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .career-skills-modern {
+    grid-template-columns: 1fr;
+  }
+
+  .career-skills-summary {
+    flex-direction: row;
+    gap: 25px;
+    text-align: left;
+  }
+
+  .career-skills-summary p {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 950px) {
+  .career-modern-sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .career-modern-main {
+    margin-left: 0;
+  }
+
+  .career-modern-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .career-hero-visual {
+    align-self: center;
+  }
+
+  .career-goal-modern {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .career-goal-progress-modern {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .career-modern-main {
+    padding: 20px 15px 35px;
+  }
+
+  .career-modern-header h1 {
+    font-size: 29px;
+  }
+
+  .career-modern-header p {
+    font-size: 14px;
+  }
+
+  .career-modern-hero {
+    padding: 30px 23px;
+  }
+
+  .career-hero-content h2 {
+    font-size: 36px;
+  }
+
+  .career-hero-content p {
+    font-size: 15px;
+  }
+
+  .career-hero-actions {
+    flex-direction: column;
+  }
+
+  .career-primary-button,
+  .career-secondary-button {
+    width: 100%;
+  }
+
+  .career-hero-visual {
+    transform: scale(.82);
+    margin: -20px auto;
+  }
+
+  .career-section-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .career-options-modern {
+    grid-template-columns: 1fr;
+  }
+
+  .career-skills-summary {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .career-skill-modern {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    padding: 14px 0;
+  }
+
+  .career-process-modern-item {
+    grid-template-columns: 38px 42px 1fr;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .career-step-title-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .career-next-modern {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .career-next-button-modern {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .career-modern-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+/* =========================================================
+   PROFESSIONAL TYPOGRAPHY SYSTEM
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Manrope", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Global typography */
+html,
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+body {
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Main headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* Large page headings */
+.professional-main h1,
+.academic-modern-main h1,
+.career-modern-main h1 {
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+/* Section headings */
+.dashboard-section-card h2,
+.academic-card h2,
+.career-section-title h2 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Paragraphs */
+p {
+  font-family: var(--font-body);
+  line-height: 1.65;
+}
+
+/* Sidebar typography */
+.professional-sidebar,
+.academic-modern-sidebar,
+.career-modern-sidebar,
+.student-sidebar {
+  font-family: var(--font-body);
+}
+
+.professional-sidebar a,
+.academic-modern-sidebar a,
+.career-modern-sidebar a,
+.student-sidebar a {
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+/* Navigation labels */
+.professional-nav,
+.academic-modern-nav,
+.career-modern-nav {
+  font-size: 14px;
+}
+
+.professional-nav a,
+.academic-modern-nav a,
+.career-modern-nav a {
+  font-weight: 600;
+}
+
+/* Buttons */
+button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Stat numbers */
+.dashboard-stat-card strong,
+.academic-stat strong,
+.career-goal-progress-modern strong {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+/* Cards */
+.dashboard-section-card,
+.academic-card,
+.career-goal-modern,
+.career-option-modern,
+.career-skills-modern {
+  font-family: var(--font-body);
+}
+
+/* Small labels */
+.academic-header-label,
+.academic-nav-title,
+.career-nav-label,
+.career-header-label {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Tables */
+.subject-table,
+.subject-table-head,
+.subject-row {
+  font-family: var(--font-body);
+}
+
+.subject-name strong {
+  font-weight: 650;
+}
+
+/* Form elements */
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+  font-size: 15px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-weight: 400;
+  opacity: 0.65;
+}
+
+/* Login typography */
+.login-header h1,
+.login-header h2 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.035em;
+}
+
+.login-header h1 {
+  font-weight: 800;
+}
+
+.login-header h2 {
+  font-weight: 700;
+}
+
+.login-header p {
+  line-height: 1.6;
+}
+
+/* Improve text hierarchy */
+.text-muted,
+small {
+  letter-spacing: 0;
+}
+
+/* Smooth text appearance */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* =========================================================
+   FINAL PROFESSIONAL TYPOGRAPHY — FULL PLATFORM
+   ========================================================= */
+
+:root {
+  --app-font:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --heading-font:
+    "Manrope",
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* ---------------------------------------------------------
+   GLOBAL
+   --------------------------------------------------------- */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--app-font);
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: var(--app-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+
+/* =========================================================
+   DASHBOARD
+   ========================================================= */
+
+.professional-main {
+  font-size: 16px;
+}
+
+/* Dashboard top heading */
+.professional-main h1 {
+  font-family: var(--heading-font);
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.professional-main h2 {
+  font-size: 26px;
+  font-weight: 750;
+}
+
+.professional-main h3 {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+/* Dashboard normal paragraphs */
+.professional-main p {
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Small section labels */
+.dashboard-section-card > span,
+.dashboard-section-card .section-label,
+.dashboard-main-hero span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Stat cards */
+.dashboard-stat-card {
+  font-size: 16px;
+}
+
+.dashboard-stat-card strong {
+  font-family: var(--heading-font);
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.dashboard-stat-card span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dashboard-stat-card small {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Learning Hub */
+.dashboard-section-card h2 {
+  font-family: var(--heading-font);
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.dashboard-section-card p {
+  font-size: 16px;
+}
+
+/* Module cards */
+.dashboard-module-card h3,
+.dashboard-module-card strong {
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.dashboard-module-card p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.dashboard-module-card small {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.dashboard-module-card span {
+  font-size: 14px;
+}
+
+/* Career progress card */
+.dashboard-side-card h2 {
+  font-family: var(--heading-font);
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.dashboard-side-card h3 {
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.dashboard-side-card p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.professional-sidebar,
+.academic-modern-sidebar,
+.career-modern-sidebar,
+.student-sidebar {
+  font-size: 15px;
+}
+
+/* Logo / brand */
+.brand-area,
+.academic-brand,
+.career-brand {
+  font-family: var(--heading-font);
+}
+
+.brand-area strong,
+.academic-brand strong,
+.career-brand strong {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Navigation */
+.professional-nav a,
+.academic-modern-nav a,
+.career-modern-nav a,
+.student-sidebar a {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Navigation category */
+.professional-nav-title,
+.academic-nav-title,
+.career-nav-label {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Sidebar user */
+.professional-sidebar .user-name,
+.academic-sidebar-user strong,
+.career-sidebar-user strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.professional-sidebar .user-email,
+.academic-sidebar-user span,
+.career-sidebar-user span {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   ACADEMICS
+   ========================================================= */
+
+.academic-modern-main {
+  font-size: 16px;
+}
+
+.academic-modern-header h1 {
+  font-family: var(--heading-font);
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.academic-modern-header p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.academic-header-label {
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+/* Academic hero */
+.academic-hero-content h2 {
+  font-family: var(--heading-font);
+  font-size: 52px;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.academic-hero-content p {
+  font-size: 17px;
+}
+
+.academic-hero-content > span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* Academic score */
+.academic-score-ring strong {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.score-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.score-status {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+/* Academic statistics */
+.academic-stat {
+  font-size: 15px;
+}
+
+.academic-stat > div:last-child > span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.academic-stat > div:last-child > strong {
+  font-family: var(--heading-font);
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.academic-stat > div:last-child > small {
+  font-size: 14px;
+}
+
+/* Academic card headers */
+.academic-card-header span {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.academic-card-header h2 {
+  font-family: var(--heading-font);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.academic-card-header button {
+  font-size: 14px;
+  font-weight: 650;
+}
+
+/* Subject table */
+.subject-table-head {
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+}
+
+.subject-name strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.subject-name span {
+  font-size: 13px;
+}
+
+.subject-row > strong {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.grade {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.subject-progress small {
+  font-size: 13px;
+  font-weight: 650;
+}
+
+/* Attendance */
+.attendance-circle strong {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.attendance-circle span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.attendance-info span {
+  font-size: 12px;
+}
+
+.attendance-info strong {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.attendance-card p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Insights */
+.academic-insight strong {
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.academic-insight p {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Academic activity */
+.academic-activity-item strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.academic-activity-item span {
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   CAREER
+   ========================================================= */
+
+.career-modern-main {
+  font-size: 16px;
+}
+
+.career-modern-header h1 {
+  font-family: var(--heading-font);
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.career-modern-header p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.career-header-label {
+  font-size: 13px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+}
+
+/* Career hero */
+.career-hero-content h1,
+.career-modern-hero h1 {
+  font-family: var(--heading-font);
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+.career-hero-content p {
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* Career buttons */
+.career-primary-button,
+.career-secondary-button,
+.career-next-button-modern {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Career section */
+.career-section-title h2 {
+  font-family: var(--heading-font);
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.career-section-title p {
+  font-size: 16px;
+}
+
+/* Career goal */
+.career-goal-modern h2,
+.career-goal-modern h3 {
+  font-family: var(--heading-font);
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.career-goal-modern p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.career-tags span {
+  font-size: 13px;
+  font-weight: 650;
+}
+
+/* Career options */
+.career-option-modern h3 {
+  font-family: var(--heading-font);
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.career-option-modern p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.career-selected-badge {
+  font-size: 12px;
+  font-weight: 750;
+}
+
+/* Skills */
+.career-skills-modern h2 {
+  font-family: var(--heading-font);
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.career-skill-name {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.career-skill-progress {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Career process */
+.career-process-modern-item h3 {
+  font-family: var(--heading-font);
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.career-process-modern-item p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.career-step-number {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Career next action */
+.career-next-content h3 {
+  font-family: var(--heading-font);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.career-next-content p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   LOGIN / REGISTER
+   ========================================================= */
+
+.login-page {
+  font-size: 16px;
+}
+
+.login-header h1 {
+  font-family: var(--heading-font);
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.login-header h2 {
+  font-family: var(--heading-font);
+  font-size: 25px;
+  font-weight: 750;
+}
+
+.login-header p {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.login-form label {
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.login-form input {
+  font-size: 15px;
+}
+
+.login-submit {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.switch-account {
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   BUTTONS — PLATFORM WIDE
+   ========================================================= */
+
+button {
+  font-size: 14px;
+  font-weight: 650;
+}
+
+button:hover {
+  transition: all 0.2s ease;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .professional-main h1,
+  .academic-modern-header h1,
+  .career-modern-header h1 {
+    font-size: 32px;
+  }
+
+  .dashboard-section-card h2,
+  .academic-card-header h2,
+  .career-section-title h2 {
+    font-size: 23px;
+  }
+
+  .dashboard-stat-card strong {
+    font-size: 30px;
+  }
+
+  .academic-hero-content h2 {
+    font-size: 44px;
+  }
+
+  .career-hero-content h1,
+  .career-modern-hero h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  .professional-main h1,
+  .academic-modern-header h1,
+  .career-modern-header h1 {
+    font-size: 28px;
+  }
+
+  .professional-main p,
+  .academic-modern-header p,
+  .career-modern-header p {
+    font-size: 15px;
+  }
+
+  .dashboard-section-card h2,
+  .academic-card-header h2,
+  .career-section-title h2 {
+    font-size: 21px;
+  }
+
+  .dashboard-stat-card strong {
+    font-size: 27px;
+  }
+
+  .academic-hero-content h2 {
+    font-size: 38px;
+  }
+
+  .career-hero-content h1,
+  .career-modern-hero h1 {
+    font-size: 31px;
+  }
+}
+/* =========================================================
+   PROFESSIONAL SKILLS PAGE
+   Smart Student Platform
+   ========================================================= */
+
+.skills-modern-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #172033;
+  display: flex;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.skills-modern-sidebar {
+  width: 270px;
+  min-width: 270px;
+  min-height: 100vh;
+  background: #0b1220;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 18px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 50;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.skills-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 10px 30px;
+}
+
+.skills-brand-logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #4f46e5, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.3);
+  flex-shrink: 0;
+}
+
+.skills-brand-logo svg {
+  width: 22px;
+  height: 22px;
+}
+
+.skills-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.skills-brand-text strong {
+  font-size: 16px;
+  font-weight: 750;
+  letter-spacing: -0.3px;
+}
+
+.skills-brand-text span {
+  font-size: 11px;
+  color: #8e9bb2;
+  font-weight: 500;
+}
+
+.skills-nav-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: #65728a;
+  font-weight: 700;
+  padding: 0 12px;
+  margin-bottom: 10px;
+}
+
+.skills-modern-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.skills-modern-nav a {
+  text-decoration: none;
+}
+
+.skills-modern-nav-link {
+  width: 100%;
+  min-height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  color: #9ba8bc;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0 13px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 550;
+  text-align: left;
+  transition: all 0.2s ease;
+}
+
+.skills-modern-nav-link svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.skills-modern-nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.skills-modern-nav-link.active {
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(79, 70, 229, 0.9),
+    rgba(37, 99, 235, 0.9)
+  );
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.18);
+}
+
+.skills-modern-nav-link.active svg {
+  opacity: 1;
+}
+
+.skills-sidebar-spacer {
+  flex: 1;
+}
+
+.skills-sidebar-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 18px;
+}
+
+.skills-sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 8px 8px 14px;
+}
+
+.skills-user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.skills-user-details {
+  min-width: 0;
+}
+
+.skills-user-details strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 650;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skills-user-details span {
+  display: block;
+  font-size: 11px;
+  color: #77849a;
+  margin-top: 3px;
+}
+
+.skills-logout-button {
+  width: 100%;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.035);
+  color: #aeb9ca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.skills-logout-button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.skills-logout-button:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.25);
+  color: #f87171;
+}
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.skills-modern-main {
+  margin-left: 270px;
+  width: calc(100% - 270px);
+  min-height: 100vh;
+  padding: 0 36px 40px;
+}
+
+/* =========================================================
+   TOP HEADER
+   ========================================================= */
+
+.skills-modern-header {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6eaf1;
+  margin-bottom: 32px;
+}
+
+.skills-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.skills-header-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.skills-modern-header h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.2;
+  color: #111827;
+  font-weight: 760;
+  letter-spacing: -0.7px;
+}
+
+.skills-modern-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.skills-header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.skills-header-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.skills-header-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.skills-header-avatar {
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #4f46e5, #2563eb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.skills-modern-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 245px;
+  border-radius: 24px;
+  padding: 34px 38px;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(99, 102, 241, 0.28),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #111827 0%, #172554 55%, #1e3a8a 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+}
+
+.skills-modern-hero::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+  right: -80px;
+  top: -120px;
+}
+
+.skills-modern-hero::after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  right: 70px;
+  bottom: -120px;
+}
+
+.skills-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.skills-hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #a5b4fc;
+  margin-bottom: 13px;
+}
+
+.skills-hero-content h2 {
+  margin: 0 0 10px;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 780;
+  letter-spacing: -1px;
+}
+
+.skills-hero-content p {
+  margin: 0;
+  max-width: 620px;
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.skills-hero-progress {
+  position: relative;
+  z-index: 3;
+  width: 190px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.skills-hero-progress-ring {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at center, #172554 57%, transparent 58%),
+    conic-gradient(#60a5fa 0deg, #818cf8 266deg, rgba(255,255,255,0.12) 266deg);
+}
+
+.skills-hero-progress-ring strong {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.skills-hero-progress span {
+  display: block;
+  font-size: 12px;
+  color: #aebbd0;
+}
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.skills-modern-section {
+  margin-bottom: 30px;
+}
+
+.skills-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 17px;
+}
+
+.skills-section-heading > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.skills-section-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  color: #6366f1;
+  font-weight: 750;
+}
+
+.skills-section-heading h2 {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 750;
+  color: #172033;
+  letter-spacing: -0.45px;
+}
+
+.skills-section-heading p {
+  margin: 0;
+  font-size: 13px;
+  color: #737e91;
+}
+
+/* =========================================================
+   CAREER SELECTOR
+   ========================================================= */
+
+.skills-career-selection-modern {
+  background: #ffffff;
+  border: 1px solid #e4e8ef;
+  border-radius: 18px;
+  padding: 21px;
+  box-shadow: 0 7px 25px rgba(15, 23, 42, 0.045);
+}
+
+.skills-career-select-modern {
+  width: 100%;
+  min-height: 62px;
+  border: 1px solid #dce2eb;
+  border-radius: 13px;
+  background: #f8fafc;
+  color: #172033;
+  padding: 0 17px;
+  font-size: 15px;
+  font-weight: 650;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.skills-career-select-modern:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.09);
+}
+
+/* =========================================================
+   SKILLS GRID
+   ========================================================= */
+
+.skills-modern-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.skills-modern-card {
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 18px;
+  padding: 23px;
+  box-shadow: 0 7px 25px rgba(15, 23, 42, 0.045);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skills-modern-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+}
+
+.skills-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 19px;
+}
+
+.skills-card-top-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skills-card-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-card-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.skills-card-top h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 720;
+  color: #1f2937;
+}
+
+.skills-card-top span {
+  font-size: 12px;
+  color: #8a94a6;
+}
+
+.skills-card-percentage {
+  font-size: 21px;
+  font-weight: 780;
+  color: #172033;
+}
+
+.skills-card-bar {
+  height: 9px;
+  background: #edf0f5;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.skills-card-bar-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  transition: width 0.5s ease;
+}
+
+/* =========================================================
+   ANALYSIS
+   ========================================================= */
+
+.skills-analysis-grid-modern {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.skills-analysis-card-modern {
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 7px 25px rgba(15, 23, 42, 0.045);
+}
+
+.skills-analysis-card-modern h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 750;
+  color: #172033;
+}
+
+.skills-analysis-card-modern > p {
+  margin: 7px 0 20px;
+  font-size: 13px;
+  color: #7b8494;
+  line-height: 1.6;
+}
+
+.skills-gap-list-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.skills-gap-item-modern {
+  padding: 15px;
+  border-radius: 13px;
+  background: #f8fafc;
+  border: 1px solid #edf0f5;
+}
+
+.skills-gap-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.skills-gap-item-header strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #263244;
+}
+
+.skills-gap-value {
+  font-size: 13px;
+  font-weight: 750;
+  color: #ef4444;
+}
+
+.skills-gap-track {
+  height: 7px;
+  background: #e8edf3;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.skills-gap-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #f97316, #ef4444);
+}
+
+/* =========================================================
+   ASSESSMENT CARD
+   ========================================================= */
+
+.skills-assessment-modern {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #eef2ff, #eff6ff);
+  border: 1px solid #dbe4ff;
+  border-radius: 20px;
+  padding: 29px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.skills-assessment-modern::after {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(79, 70, 229, 0.09);
+  border-radius: 50%;
+  right: -80px;
+  top: -100px;
+}
+
+.skills-assessment-icon-modern {
+  width: 65px;
+  height: 65px;
+  border-radius: 17px;
+  background: #ffffff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(79, 70, 229, 0.12);
+  flex-shrink: 0;
+}
+
+.skills-assessment-icon-modern svg {
+  width: 29px;
+  height: 29px;
+}
+
+.skills-assessment-content-modern {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+.skills-assessment-content-modern h3 {
+  margin: 0 0 7px;
+  font-size: 20px;
+  font-weight: 760;
+  color: #172033;
+}
+
+.skills-assessment-content-modern p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #657087;
+}
+
+.skills-primary-button-modern {
+  min-height: 47px;
+  padding: 0 21px;
+  border: none;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #4f46e5, #2563eb);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+  z-index: 3;
+}
+
+.skills-primary-button-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.28);
+}
+
+/* =========================================================
+   QUESTION AREA
+   ========================================================= */
+
+.skills-question-modern {
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 7px 25px rgba(15, 23, 42, 0.045);
+}
+
+.skills-question-header-modern {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #edf0f4;
+  margin-bottom: 26px;
+}
+
+.skills-question-number {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.skills-question-progress-text {
+  font-size: 13px;
+  color: #7b8494;
+  font-weight: 600;
+}
+
+.skills-question-modern h3 {
+  margin: 0 0 24px;
+  font-size: 22px;
+  line-height: 1.5;
+  color: #172033;
+  font-weight: 720;
+}
+
+.skills-answer-options-modern {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.skills-answer-option-modern {
+  min-height: 62px;
+  padding: 14px 17px;
+  border-radius: 13px;
+  border: 1px solid #dfe4eb;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-align: left;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.skills-answer-option-modern:hover {
+  border-color: #818cf8;
+  background: #f8f8ff;
+}
+
+.skills-answer-option-modern.selected {
+  border-color: #4f46e5;
+  background: #eef2ff;
+  color: #3730a3;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
+}
+
+.skills-answer-letter {
+  width: 31px;
+  height: 31px;
+  border-radius: 9px;
+  background: #f1f4f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.skills-answer-option-modern.selected .skills-answer-letter {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+.skills-question-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #edf0f4;
+}
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.skills-result-modern {
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 21px;
+  padding: 32px;
+  box-shadow: 0 7px 25px rgba(15, 23, 42, 0.05);
+}
+
+.skills-result-top {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding-bottom: 27px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.skills-result-score {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at center, #ffffff 57%, transparent 58%),
+    conic-gradient(#4f46e5 0deg, #3b82f6 280deg, #e9edf3 280deg);
+  flex-shrink: 0;
+}
+
+.skills-result-score strong {
+  font-size: 29px;
+  font-weight: 800;
+  color: #172033;
+}
+
+.skills-result-top h3 {
+  margin: 0 0 7px;
+  font-size: 23px;
+  color: #172033;
+  font-weight: 760;
+}
+
+.skills-result-top p {
+  margin: 0;
+  color: #737e91;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.skills-result-grid-modern {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.skills-result-stat {
+  padding: 19px;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #edf0f4;
+}
+
+.skills-result-stat span {
+  display: block;
+  color: #7b8494;
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.skills-result-stat strong {
+  font-size: 22px;
+  font-weight: 780;
+  color: #172033;
+}
+
+/* =========================================================
+   RECOMMENDATIONS
+   ========================================================= */
+
+.skills-recommendations-modern {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.skills-recommendation-modern {
+  background: #ffffff;
+  border: 1px solid #e5e9f0;
+  border-radius: 17px;
+  padding: 22px;
+  transition: all 0.2s ease;
+}
+
+.skills-recommendation-modern:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.skills-recommendation-number {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.skills-recommendation-modern h4 {
+  margin: 0 0 7px;
+  font-size: 15px;
+  color: #1f2937;
+  font-weight: 720;
+}
+
+.skills-recommendation-modern p {
+  margin: 0;
+  font-size: 13px;
+  color: #737e91;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   ROADMAP CTA
+   ========================================================= */
+
+.skills-roadmap-modern {
+  border-radius: 20px;
+  padding: 28px 30px;
+  background: linear-gradient(135deg, #111827, #1e3a8a);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skills-roadmap-modern::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  right: -90px;
+  top: -120px;
+}
+
+.skills-roadmap-content {
+  position: relative;
+  z-index: 2;
+}
+
+.skills-roadmap-content h3 {
+  margin: 0 0 7px;
+  font-size: 21px;
+  font-weight: 760;
+}
+
+.skills-roadmap-content p {
+  margin: 0;
+  color: #b9c5d7;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.skills-roadmap-button {
+  min-height: 46px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 11px;
+  background: #ffffff;
+  color: #1e3a8a;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.skills-roadmap-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.skills-modern-footer {
+  padding: 25px 4px 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #8a94a6;
+  font-size: 12px;
+}
+
+.skills-modern-footer strong {
+  color: #596579;
+  font-weight: 650;
+}
+
+/* =========================================================
+   LARGE SCREEN
+   ========================================================= */
+
+@media (min-width: 1450px) {
+  .skills-modern-main {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .skills-modern-header h1 {
+    font-size: 34px;
+  }
+
+  .skills-hero-content h2 {
+    font-size: 40px;
+  }
+
+  .skills-modern-card {
+    padding: 26px;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .skills-modern-sidebar {
+    width: 235px;
+    min-width: 235px;
+  }
+
+  .skills-modern-main {
+    margin-left: 235px;
+    width: calc(100% - 235px);
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .skills-modern-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-analysis-grid-modern {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-recommendations-modern {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .skills-modern-sidebar {
+    width: 76px;
+    min-width: 76px;
+    padding: 20px 10px;
+  }
+
+  .skills-brand {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .skills-brand-text,
+  .skills-nav-label,
+  .skills-modern-nav-link span,
+  .skills-user-details,
+  .skills-logout-button span {
+    display: none;
+  }
+
+  .skills-modern-nav-link {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .skills-sidebar-user {
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .skills-logout-button {
+    width: 46px;
+    margin: 0 auto;
+  }
+
+  .skills-modern-main {
+    margin-left: 76px;
+    width: calc(100% - 76px);
+    padding: 0 20px 30px;
+  }
+
+  .skills-modern-hero {
+    padding: 27px;
+  }
+
+  .skills-hero-content h2 {
+    font-size: 30px;
+  }
+
+  .skills-hero-progress {
+    width: 145px;
+  }
+
+  .skills-recommendations-modern {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .skills-modern-main {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 15px 25px;
+  }
+
+  .skills-modern-sidebar {
+    display: none;
+  }
+
+  .skills-modern-header {
+    min-height: 75px;
+    margin-bottom: 20px;
+  }
+
+  .skills-modern-header h1 {
+    font-size: 24px;
+  }
+
+  .skills-modern-header p {
+    font-size: 12px;
+  }
+
+  .skills-header-icon {
+    display: none;
+  }
+
+  .skills-modern-hero {
+    min-height: auto;
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .skills-hero-content h2 {
+    font-size: 27px;
+  }
+
+  .skills-hero-content p {
+    font-size: 13px;
+  }
+
+  .skills-hero-progress {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .skills-hero-progress-ring {
+    width: 85px;
+    height: 85px;
+    margin: 0;
+  }
+
+  .skills-hero-progress-ring strong {
+    font-size: 21px;
+  }
+
+  .skills-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .skills-section-heading h2 {
+    font-size: 20px;
+  }
+
+  .skills-modern-card {
+    padding: 19px;
+  }
+
+  .skills-analysis-card-modern {
+    padding: 20px;
+  }
+
+  .skills-assessment-modern {
+    padding: 22px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .skills-primary-button-modern {
+    width: 100%;
+  }
+
+  .skills-question-modern {
+    padding: 20px;
+  }
+
+  .skills-answer-options-modern {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-result-modern {
+    padding: 21px;
+  }
+
+  .skills-result-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skills-result-grid-modern {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-roadmap-modern {
+    padding: 23px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .skills-roadmap-button {
+    width: 100%;
+  }
+
+  .skills-modern-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+  }
+}
+/* =====================================================
+   SKILLS PAGE — PROFESSIONAL TYPOGRAPHY
+===================================================== */
+
+.skills-modern-page,
+.skills-modern-page * {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* Main body text */
+.skills-modern-main {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Header */
+.skills-modern-header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+}
+
+.skills-modern-header p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Small section labels */
+.skills-header-label,
+.skills-hero-label,
+.skills-section-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+/* Hero */
+.skills-hero-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
+.skills-hero-content p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+/* Section headings */
+.skills-section-heading h2 {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+}
+
+/* Career selector */
+.skills-career-select-modern {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Skill cards */
+.skills-modern-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.skills-modern-card p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.skills-card-percentage {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Analysis */
+.skills-analysis-card-modern h3 {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.skills-gap-item-header {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.skills-gap-value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Assessment */
+.skills-assessment-modern h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.skills-assessment-modern p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.skills-primary-button-modern {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Questions */
+.skills-question-header-modern h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.skills-question-number,
+.skills-question-progress-text {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.skills-answer-option-modern {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.skills-answer-letter {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Result */
+.skills-result-score strong {
+  font-size: 48px;
+  font-weight: 800;
+}
+
+.skills-result-score span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.skills-result-stat strong {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.skills-result-stat span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Recommendations */
+.skills-recommendation-modern {
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.skills-roadmap-content h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.skills-roadmap-content p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.skills-roadmap-button {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Footer */
+.skills-modern-footer {
+  font-size: 13px;
 }
